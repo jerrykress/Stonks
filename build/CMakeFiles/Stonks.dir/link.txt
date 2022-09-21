@@ -1,0 +1,1 @@
+/usr/bin/g++ -g -rdynamic CMakeFiles/Stonks.dir/stonks.cpp.o -o Stonks 
