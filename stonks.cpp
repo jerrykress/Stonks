@@ -40,9 +40,7 @@ int main(int argc, char *argv[])
     socket.lowest_layer().set_option(tcp::no_delay(true));
 
     if (ec)
-    {
         std::cout << "Failed to connect to address: " << ec.message() << std::endl;
-    }
 
     // setup SSL
     socket.set_verify_mode(ssl::verify_peer);
@@ -50,39 +48,31 @@ int main(int argc, char *argv[])
 
     // Set SNI Hostname (many hosts need this to handshake successfully)
     if (!SSL_set_tlsext_host_name(socket.native_handle(), DOMAIN.c_str()))
-    {
         throw boost::system::system_error(
             ::ERR_get_error(), boost::asio::error::get_ssl_category());
-    }
 
     // SSL handshake
     socket.handshake(ssl_socket::client, ec);
 
     if (ec)
-    {
         std::cout << "Failed to handshake: " << ec.message() << std::endl;
-    }
 
     // API request
     std::string request =
-        "GET /query?function=TIME_SERIES_DAILY&symbol=IBM&apikey=" + API_KEY + " HTTP/1.1\r\n" + "Host: " + DOMAIN + "\r\n" + "Connection: close\r\n\r\n";
+        "GET /query?function=TIME_SERIES_INTRADAY&symbol=AAPL&interval=1min&apikey=" + API_KEY + " HTTP/1.1\r\n" + "Host: " + DOMAIN + "\r\n" + "Connection: close\r\n\r\n";
 
     // write request to buffer
     socket.write_some(io::buffer(request.data(), request.size()), ec);
 
     if (ec)
-    {
         std::cout << "Error writing request to buffer: " << ec.message() << std::endl;
-    }
 
     // read response from socket
     io::streambuf response;
     io::read(socket, response, ec);
 
     if (ec)
-    {
         std::cout << "Error reading response from socket" << ec.message() << std::endl;
-    }
 
     // storing response to string
     std::ostringstream ss;
