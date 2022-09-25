@@ -4,7 +4,7 @@ project(Stonks VERSION 0.1.0)
 include(CTest)
 enable_testing()
 
-add_executable(Stonks stonks.cpp)
+add_executable(Stonks stonks.cpp config.h)
 
 find_package(OpenSSL REQUIRED)
 if (OPENSSL_FOUND)

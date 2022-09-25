@@ -3,8 +3,10 @@
 
 CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
   /usr/include/stdc-predef.h \
-  /usr/include/stdio.h \
-  /usr/include/bits/libc-header-start.h \
+  /home/jerry/Code/Stonks/config.h \
+  /usr/include/c++/12.2.0/string \
+  /usr/include/c++/12.2.0/x86_64-pc-linux-gnu/bits/c++config.h \
+  /usr/include/c++/12.2.0/x86_64-pc-linux-gnu/bits/os_defines.h \
   /usr/include/features.h \
   /usr/include/features-time64.h \
   /usr/include/bits/wordsize.h \
@@ -13,61 +15,95 @@ CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
   /usr/include/bits/long-double.h \
   /usr/include/gnu/stubs.h \
   /usr/include/gnu/stubs-64.h \
+  /usr/include/c++/12.2.0/x86_64-pc-linux-gnu/bits/cpu_defines.h \
+  /usr/include/c++/12.2.0/pstl/pstl_config.h \
+  /usr/include/c++/12.2.0/bits/stringfwd.h \
+  /usr/include/c++/12.2.0/bits/memoryfwd.h \
+  /usr/include/c++/12.2.0/bits/char_traits.h \
+  /usr/include/c++/12.2.0/bits/postypes.h \
+  /usr/include/c++/12.2.0/cwchar \
+  /usr/include/wchar.h \
+  /usr/include/bits/libc-header-start.h \
+  /usr/include/bits/floatn.h \
+  /usr/include/bits/floatn-common.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0/include/stddef.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0/include/stdarg.h \
+  /usr/include/bits/wchar.h \
+  /usr/include/bits/types/wint_t.h \
+  /usr/include/bits/types/mbstate_t.h \
+  /usr/include/bits/types/__mbstate_t.h \
+  /usr/include/bits/types/__FILE.h \
+  /usr/include/bits/types/FILE.h \
+  /usr/include/bits/types/locale_t.h \
+  /usr/include/bits/types/__locale_t.h \
+  /usr/include/c++/12.2.0/type_traits \
+  /usr/include/c++/12.2.0/cstdint \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0/include/stdint.h \
+  /usr/include/stdint.h \
   /usr/include/bits/types.h \
   /usr/include/bits/typesizes.h \
   /usr/include/bits/time64.h \
-  /usr/include/bits/types/__fpos_t.h \
-  /usr/include/bits/types/__mbstate_t.h \
-  /usr/include/bits/types/__fpos64_t.h \
-  /usr/include/bits/types/__FILE.h \
-  /usr/include/bits/types/FILE.h \
-  /usr/include/bits/types/struct_FILE.h \
-  /usr/include/bits/types/cookie_io_functions_t.h \
-  /usr/include/bits/stdio_lim.h \
-  /usr/include/bits/floatn.h \
-  /usr/include/bits/floatn-common.h \
-  /usr/include/boost/asio.hpp \
-  /usr/include/boost/asio/append.hpp \
-  /usr/include/boost/asio/detail/config.hpp \
-  /usr/include/boost/config.hpp \
-  /usr/include/boost/config/user.hpp \
-  /usr/include/boost/config/detail/select_compiler_config.hpp \
-  /usr/include/boost/config/compiler/gcc.hpp \
-  /usr/include/c++/12.2.0/cstddef \
-  /usr/include/c++/12.2.0/x86_64-pc-linux-gnu/bits/c++config.h \
-  /usr/include/c++/12.2.0/x86_64-pc-linux-gnu/bits/os_defines.h \
-  /usr/include/c++/12.2.0/x86_64-pc-linux-gnu/bits/cpu_defines.h \
-  /usr/include/c++/12.2.0/pstl/pstl_config.h \
-  /usr/include/boost/config/detail/select_stdlib_config.hpp \
-  /usr/include/c++/12.2.0/version \
-  /usr/include/boost/config/stdlib/libstdcpp3.hpp \
-  /usr/include/unistd.h \
-  /usr/include/bits/posix_opt.h \
-  /usr/include/bits/environments.h \
-  /usr/include/bits/confname.h \
-  /usr/include/bits/getopt_posix.h \
-  /usr/include/bits/getopt_core.h \
-  /usr/include/bits/unistd_ext.h \
-  /usr/include/linux/close_range.h \
-  /usr/include/boost/config/detail/select_platform_config.hpp \
-  /usr/include/boost/config/platform/linux.hpp \
+  /usr/include/bits/stdint-intn.h \
+  /usr/include/bits/stdint-uintn.h \
+  /usr/include/c++/12.2.0/bits/allocator.h \
+  /usr/include/c++/12.2.0/x86_64-pc-linux-gnu/bits/c++allocator.h \
+  /usr/include/c++/12.2.0/bits/new_allocator.h \
+  /usr/include/c++/12.2.0/new \
+  /usr/include/c++/12.2.0/bits/exception.h \
+  /usr/include/c++/12.2.0/bits/functexcept.h \
+  /usr/include/c++/12.2.0/bits/exception_defines.h \
+  /usr/include/c++/12.2.0/bits/move.h \
+  /usr/include/c++/12.2.0/bits/cpp_type_traits.h \
+  /usr/include/c++/12.2.0/bits/localefwd.h \
+  /usr/include/c++/12.2.0/x86_64-pc-linux-gnu/bits/c++locale.h \
+  /usr/include/c++/12.2.0/clocale \
+  /usr/include/locale.h \
+  /usr/include/bits/locale.h \
+  /usr/include/c++/12.2.0/iosfwd \
+  /usr/include/c++/12.2.0/cctype \
+  /usr/include/ctype.h \
+  /usr/include/bits/endian.h \
+  /usr/include/bits/endianness.h \
+  /usr/include/c++/12.2.0/bits/ostream_insert.h \
+  /usr/include/c++/12.2.0/bits/cxxabi_forced.h \
+  /usr/include/c++/12.2.0/bits/stl_iterator_base_types.h \
+  /usr/include/c++/12.2.0/bits/stl_iterator_base_funcs.h \
+  /usr/include/c++/12.2.0/bits/concept_check.h \
+  /usr/include/c++/12.2.0/debug/assertions.h \
+  /usr/include/c++/12.2.0/bits/stl_iterator.h \
+  /usr/include/c++/12.2.0/ext/type_traits.h \
+  /usr/include/c++/12.2.0/bits/ptr_traits.h \
+  /usr/include/c++/12.2.0/bits/stl_function.h \
+  /usr/include/c++/12.2.0/backward/binders.h \
+  /usr/include/c++/12.2.0/ext/numeric_traits.h \
+  /usr/include/c++/12.2.0/bits/stl_algobase.h \
+  /usr/include/c++/12.2.0/bits/stl_pair.h \
+  /usr/include/c++/12.2.0/bits/utility.h \
+  /usr/include/c++/12.2.0/debug/debug.h \
+  /usr/include/c++/12.2.0/bits/predefined_ops.h \
+  /usr/include/c++/12.2.0/bits/refwrap.h \
+  /usr/include/c++/12.2.0/bits/invoke.h \
+  /usr/include/c++/12.2.0/bits/range_access.h \
+  /usr/include/c++/12.2.0/initializer_list \
+  /usr/include/c++/12.2.0/bits/basic_string.h \
+  /usr/include/c++/12.2.0/ext/alloc_traits.h \
+  /usr/include/c++/12.2.0/bits/alloc_traits.h \
+  /usr/include/c++/12.2.0/bits/stl_construct.h \
+  /usr/include/c++/12.2.0/string_view \
+  /usr/include/c++/12.2.0/bits/functional_hash.h \
+  /usr/include/c++/12.2.0/bits/hash_bytes.h \
+  /usr/include/c++/12.2.0/bits/string_view.tcc \
+  /usr/include/c++/12.2.0/ext/string_conversions.h \
   /usr/include/c++/12.2.0/cstdlib \
   /usr/include/stdlib.h \
   /usr/include/bits/waitflags.h \
   /usr/include/bits/waitstatus.h \
-  /usr/include/bits/types/locale_t.h \
-  /usr/include/bits/types/__locale_t.h \
   /usr/include/sys/types.h \
   /usr/include/bits/types/clock_t.h \
   /usr/include/bits/types/clockid_t.h \
   /usr/include/bits/types/time_t.h \
   /usr/include/bits/types/timer_t.h \
-  /usr/include/bits/stdint-intn.h \
   /usr/include/endian.h \
-  /usr/include/bits/endian.h \
-  /usr/include/bits/endianness.h \
   /usr/include/bits/byteswap.h \
   /usr/include/bits/uintn-identity.h \
   /usr/include/sys/select.h \
@@ -85,6 +121,44 @@ CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
   /usr/include/alloca.h \
   /usr/include/bits/stdlib-float.h \
   /usr/include/c++/12.2.0/bits/std_abs.h \
+  /usr/include/c++/12.2.0/cstdio \
+  /usr/include/stdio.h \
+  /usr/include/bits/types/__fpos_t.h \
+  /usr/include/bits/types/__fpos64_t.h \
+  /usr/include/bits/types/struct_FILE.h \
+  /usr/include/bits/types/cookie_io_functions_t.h \
+  /usr/include/bits/stdio_lim.h \
+  /usr/include/c++/12.2.0/cerrno \
+  /usr/include/errno.h \
+  /usr/include/bits/errno.h \
+  /usr/include/linux/errno.h \
+  /usr/include/asm/errno.h \
+  /usr/include/asm-generic/errno.h \
+  /usr/include/asm-generic/errno-base.h \
+  /usr/include/bits/types/error_t.h \
+  /usr/include/c++/12.2.0/bits/charconv.h \
+  /usr/include/c++/12.2.0/bits/basic_string.tcc \
+  /usr/include/boost/asio.hpp \
+  /usr/include/boost/asio/append.hpp \
+  /usr/include/boost/asio/detail/config.hpp \
+  /usr/include/boost/config.hpp \
+  /usr/include/boost/config/user.hpp \
+  /usr/include/boost/config/detail/select_compiler_config.hpp \
+  /usr/include/boost/config/compiler/gcc.hpp \
+  /usr/include/c++/12.2.0/cstddef \
+  /usr/include/boost/config/detail/select_stdlib_config.hpp \
+  /usr/include/c++/12.2.0/version \
+  /usr/include/boost/config/stdlib/libstdcpp3.hpp \
+  /usr/include/unistd.h \
+  /usr/include/bits/posix_opt.h \
+  /usr/include/bits/environments.h \
+  /usr/include/bits/confname.h \
+  /usr/include/bits/getopt_posix.h \
+  /usr/include/bits/getopt_core.h \
+  /usr/include/bits/unistd_ext.h \
+  /usr/include/linux/close_range.h \
+  /usr/include/boost/config/detail/select_platform_config.hpp \
+  /usr/include/boost/config/platform/linux.hpp \
   /usr/include/boost/config/detail/posix_features.hpp \
   /usr/include/boost/config/detail/suffix.hpp \
   /usr/include/boost/config/helper_macros.hpp \
@@ -92,12 +166,7 @@ CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
   /usr/include/boost/version.hpp \
   /usr/include/linux/version.h \
   /usr/include/c++/12.2.0/tuple \
-  /usr/include/c++/12.2.0/bits/stl_pair.h \
-  /usr/include/c++/12.2.0/type_traits \
-  /usr/include/c++/12.2.0/bits/move.h \
-  /usr/include/c++/12.2.0/bits/utility.h \
   /usr/include/c++/12.2.0/bits/uses_allocator.h \
-  /usr/include/c++/12.2.0/bits/invoke.h \
   /usr/include/boost/asio/detail/type_traits.hpp \
   /usr/include/boost/asio/detail/push_options.hpp \
   /usr/include/boost/asio/detail/pop_options.hpp \
@@ -108,55 +177,16 @@ CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
   /usr/include/boost/asio/detail/handler_alloc_helpers.hpp \
   /usr/include/boost/asio/detail/memory.hpp \
   /usr/include/c++/12.2.0/memory \
-  /usr/include/c++/12.2.0/bits/stl_algobase.h \
-  /usr/include/c++/12.2.0/bits/functexcept.h \
-  /usr/include/c++/12.2.0/bits/exception_defines.h \
-  /usr/include/c++/12.2.0/bits/cpp_type_traits.h \
-  /usr/include/c++/12.2.0/ext/type_traits.h \
-  /usr/include/c++/12.2.0/ext/numeric_traits.h \
-  /usr/include/c++/12.2.0/bits/stl_iterator_base_types.h \
-  /usr/include/c++/12.2.0/bits/stl_iterator_base_funcs.h \
-  /usr/include/c++/12.2.0/bits/concept_check.h \
-  /usr/include/c++/12.2.0/debug/assertions.h \
-  /usr/include/c++/12.2.0/bits/stl_iterator.h \
-  /usr/include/c++/12.2.0/bits/ptr_traits.h \
-  /usr/include/c++/12.2.0/debug/debug.h \
-  /usr/include/c++/12.2.0/bits/predefined_ops.h \
-  /usr/include/c++/12.2.0/bits/allocator.h \
-  /usr/include/c++/12.2.0/x86_64-pc-linux-gnu/bits/c++allocator.h \
-  /usr/include/c++/12.2.0/bits/new_allocator.h \
-  /usr/include/c++/12.2.0/new \
-  /usr/include/c++/12.2.0/bits/exception.h \
-  /usr/include/c++/12.2.0/bits/memoryfwd.h \
-  /usr/include/c++/12.2.0/bits/stl_construct.h \
   /usr/include/c++/12.2.0/bits/stl_uninitialized.h \
-  /usr/include/c++/12.2.0/ext/alloc_traits.h \
-  /usr/include/c++/12.2.0/bits/alloc_traits.h \
   /usr/include/c++/12.2.0/bits/stl_tempbuf.h \
   /usr/include/c++/12.2.0/bits/stl_raw_storage_iter.h \
   /usr/include/c++/12.2.0/bits/align.h \
   /usr/include/c++/12.2.0/bit \
-  /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0/include/stdint.h \
-  /usr/include/stdint.h \
-  /usr/include/bits/wchar.h \
-  /usr/include/bits/stdint-uintn.h \
   /usr/include/c++/12.2.0/bits/unique_ptr.h \
-  /usr/include/c++/12.2.0/bits/stl_function.h \
-  /usr/include/c++/12.2.0/backward/binders.h \
-  /usr/include/c++/12.2.0/bits/functional_hash.h \
-  /usr/include/c++/12.2.0/bits/hash_bytes.h \
   /usr/include/c++/12.2.0/bits/shared_ptr.h \
-  /usr/include/c++/12.2.0/iosfwd \
-  /usr/include/c++/12.2.0/bits/stringfwd.h \
-  /usr/include/c++/12.2.0/bits/postypes.h \
-  /usr/include/c++/12.2.0/cwchar \
-  /usr/include/wchar.h \
-  /usr/include/bits/types/wint_t.h \
-  /usr/include/bits/types/mbstate_t.h \
   /usr/include/c++/12.2.0/bits/shared_ptr_base.h \
   /usr/include/c++/12.2.0/typeinfo \
   /usr/include/c++/12.2.0/bits/allocated_ptr.h \
-  /usr/include/c++/12.2.0/bits/refwrap.h \
   /usr/include/c++/12.2.0/ext/aligned_buffer.h \
   /usr/include/c++/12.2.0/ext/atomicity.h \
   /usr/include/c++/12.2.0/x86_64-pc-linux-gnu/bits/gthr.h \
@@ -194,35 +224,6 @@ CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
   /usr/include/boost/current_function.hpp \
   /usr/include/boost/config/workaround.hpp \
   /usr/include/boost/cstdint.hpp \
-  /usr/include/c++/12.2.0/string \
-  /usr/include/c++/12.2.0/bits/char_traits.h \
-  /usr/include/c++/12.2.0/cstdint \
-  /usr/include/c++/12.2.0/bits/localefwd.h \
-  /usr/include/c++/12.2.0/x86_64-pc-linux-gnu/bits/c++locale.h \
-  /usr/include/c++/12.2.0/clocale \
-  /usr/include/locale.h \
-  /usr/include/bits/locale.h \
-  /usr/include/c++/12.2.0/cctype \
-  /usr/include/ctype.h \
-  /usr/include/c++/12.2.0/bits/ostream_insert.h \
-  /usr/include/c++/12.2.0/bits/cxxabi_forced.h \
-  /usr/include/c++/12.2.0/bits/range_access.h \
-  /usr/include/c++/12.2.0/initializer_list \
-  /usr/include/c++/12.2.0/bits/basic_string.h \
-  /usr/include/c++/12.2.0/string_view \
-  /usr/include/c++/12.2.0/bits/string_view.tcc \
-  /usr/include/c++/12.2.0/ext/string_conversions.h \
-  /usr/include/c++/12.2.0/cstdio \
-  /usr/include/c++/12.2.0/cerrno \
-  /usr/include/errno.h \
-  /usr/include/bits/errno.h \
-  /usr/include/linux/errno.h \
-  /usr/include/asm/errno.h \
-  /usr/include/asm-generic/errno.h \
-  /usr/include/asm-generic/errno-base.h \
-  /usr/include/bits/types/error_t.h \
-  /usr/include/c++/12.2.0/bits/charconv.h \
-  /usr/include/c++/12.2.0/bits/basic_string.tcc \
   /usr/include/c++/12.2.0/cstring \
   /usr/include/string.h \
   /usr/include/strings.h \
@@ -1770,7 +1771,7 @@ CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
 
 /usr/include/boost/asio/impl/read.hpp:
 
-/usr/include/boost/asio/detail/socket_types.hpp:
+/usr/include/boost/asio/read.hpp:
 
 /usr/include/bits/eventfd.h:
 
@@ -1961,6 +1962,8 @@ CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
 /usr/include/boost/asio/basic_signal_set.hpp:
 
 /usr/include/c++/12.2.0/bits/locale_classes.tcc:
+
+/home/jerry/Code/Stonks/config.h:
 
 /usr/include/sys/ttydefaults.h:
 
@@ -2240,47 +2243,9 @@ CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
 
 /usr/include/c++/12.2.0/bits/erase_if.h:
 
-/usr/include/bits/netdb.h:
+/usr/include/bits/types/__fpos64_t.h:
 
-/usr/include/c++/12.2.0/bits/nested_exception.h:
-
-/usr/include/boost/predef/compiler/llvm.h:
-
-/usr/include/c++/12.2.0/backward/binders.h:
-
-/usr/include/c++/12.2.0/bits/locale_facets.tcc:
-
-/usr/include/c++/12.2.0/x86_64-pc-linux-gnu/bits/c++allocator.h:
-
-/usr/include/bits/local_lim.h:
-
-/usr/include/boost/asio/impl/system_executor.hpp:
-
-/usr/include/c++/12.2.0/bits/predefined_ops.h:
-
-/usr/include/boost/asio/windows/basic_stream_handle.hpp:
-
-/usr/include/bits/types/struct_itimerspec.h:
-
-/usr/include/c++/12.2.0/chrono:
-
-/usr/include/c++/12.2.0/bits/cpp_type_traits.h:
-
-/usr/include/boost/system/system_error.hpp:
-
-/usr/include/boost/asio/basic_socket.hpp:
-
-/usr/include/boost/asio/detail/impl/timer_queue_ptime.ipp:
-
-/usr/include/boost/asio/detail/fenced_block.hpp:
-
-/usr/include/boost/asio/detail/handler_type_requirements.hpp:
-
-/usr/include/boost/numeric/conversion/detail/udt_builtin_mixture.hpp:
-
-/usr/include/c++/12.2.0/memory:
-
-/usr/include/boost/asio/detail/handler_alloc_helpers.hpp:
+/usr/include/c++/12.2.0/bits/std_abs.h:
 
 /usr/include/boost/asio/traits/schedule_free.hpp:
 
@@ -2294,67 +2259,13 @@ CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
 
 /usr/include/boost/preprocessor/control/detail/limits/while_256.hpp:
 
+/usr/include/c++/12.2.0/pstl/pstl_config.h:
+
+/usr/include/c++/12.2.0/sstream:
+
 /usr/include/c++/12.2.0/pstl/execution_defs.h:
 
 /usr/include/boost/numeric/conversion/detail/numeric_cast_traits.hpp:
-
-/usr/include/c++/12.2.0/bits/invoke.h:
-
-/usr/include/boost/predef/library/c/_prefix.h:
-
-/usr/include/c++/12.2.0/ext/alloc_traits.h:
-
-/usr/include/c++/12.2.0/x86_64-pc-linux-gnu/bits/os_defines.h:
-
-/usr/include/boost/system/detail/error_code.hpp:
-
-/usr/include/c++/12.2.0/bits/std_mutex.h:
-
-/usr/include/boost/asio/impl/connect_pipe.ipp:
-
-/usr/include/boost/asio/detail/resolve_op.hpp:
-
-/usr/include/c++/12.2.0/bits/stl_pair.h:
-
-/usr/include/boost/asio/traits/require_concept_member.hpp:
-
-/usr/include/boost/asio/impl/append.hpp:
-
-/usr/include/c++/12.2.0/bits/exception_defines.h:
-
-/usr/include/boost/config/detail/posix_features.hpp:
-
-/usr/include/c++/12.2.0/vector:
-
-/usr/include/boost/preprocessor/arithmetic/add.hpp:
-
-/usr/include/boost/asio/execution/impl/receiver_invocation_error.ipp:
-
-/usr/include/c++/12.2.0/bits/ptr_traits.h:
-
-/usr/include/c++/12.2.0/tuple:
-
-/usr/include/boost/mpl/void.hpp:
-
-/usr/include/c++/12.2.0/bits/shared_ptr.h:
-
-/usr/include/c++/12.2.0/bits/concept_check.h:
-
-/usr/include/boost/asio/traits/require_member.hpp:
-
-/usr/include/boost/preprocessor/arithmetic/sub.hpp:
-
-/usr/include/boost/asio/detail/pop_options.hpp:
-
-/usr/include/bits/statx.h:
-
-/usr/include/boost/version.hpp:
-
-/usr/include/bits/sigstack.h:
-
-/usr/include/bits/xopen_lim.h:
-
-/usr/include/boost/asio/detail/posix_mutex.hpp:
 
 /usr/include/boost/config/helper_macros.hpp:
 
@@ -2364,97 +2275,33 @@ CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
 
 /usr/include/boost/asio/detail/reactive_socket_recv_op.hpp:
 
-/usr/include/boost/asio/detail/type_traits.hpp:
+/usr/include/bits/stdio_lim.h:
 
-/usr/include/bits/stat.h:
+/usr/include/boost/smart_ptr/detail/sp_counted_base.hpp:
 
-/usr/include/c++/12.2.0/mutex:
+/usr/include/bits/types/__mbstate_t.h:
 
-/usr/include/boost/asio/execution/scheduler.hpp:
+/usr/include/boost/asio/is_write_buffered.hpp:
 
-/usr/include/boost/asio/impl/read_until.hpp:
+/usr/include/c++/12.2.0/cstdint:
 
-/usr/include/boost/asio/is_executor.hpp:
+/usr/include/bits/fcntl.h:
 
-/usr/include/boost/predef/architecture/sys390.h:
+/usr/include/boost/asio/detail/op_queue.hpp:
 
-/usr/include/sys/cdefs.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0/include-fixed/syslimits.h:
 
-/usr/include/boost/config/detail/suffix.hpp:
-
-/usr/include/boost/asio/query.hpp:
-
-/usr/include/boost/asio/async_result.hpp:
-
-/usr/include/boost/mpl/aux_/config/eti.hpp:
-
-/usr/include/boost/system/detail/std_category_impl.hpp:
-
-/usr/include/boost/predef/compiler/watcom.h:
-
-/usr/include/boost/asio/handler_alloc_hook.hpp:
-
-/usr/include/c++/12.2.0/iosfwd:
-
-/usr/include/boost/preprocessor/list/detail/limits/fold_left_256.hpp:
-
-/usr/include/c++/12.2.0/bits/std_abs.h:
-
-/usr/include/boost/system/detail/system_category.hpp:
-
-/usr/include/alloca.h:
-
-/usr/include/bits/sigstksz.h:
-
-/usr/include/bits/struct_mutex.h:
+/usr/include/boost/mpl/multiplies.hpp:
 
 /usr/include/bits/types/sigset_t.h:
 
-/usr/include/c++/12.2.0/debug/assertions.h:
+/usr/include/boost/asio/is_contiguous_iterator.hpp:
 
-/usr/include/boost/cerrno.hpp:
+/usr/include/boost/smart_ptr/bad_weak_ptr.hpp:
 
-/usr/include/boost/asio/detail/concurrency_hint.hpp:
+/usr/include/boost/date_time/time.hpp:
 
-/usr/include/bits/byteswap.h:
-
-/usr/include/linux/stat.h:
-
-/usr/include/boost/asio/generic/detail/impl/endpoint.ipp:
-
-/usr/include/boost/asio/impl/execution_context.ipp:
-
-/usr/include/c++/12.2.0/bits/locale_facets.h:
-
-/usr/include/boost/assert/source_location.hpp:
-
-/usr/include/boost/asio/ip/impl/address_v6.ipp:
-
-/usr/include/boost/asio/prepend.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessor/def_params_tail.hpp:
-
-/usr/include/boost/system/detail/error_condition.hpp:
-
-/usr/include/bits/sigevent-consts.h:
-
-/usr/include/boost/preprocessor/facilities/expand.hpp:
-
-/usr/include/boost/bind/arg.hpp:
-
-/usr/include/boost/config/stdlib/libstdcpp3.hpp:
-
-/usr/include/boost/asio/detail/noncopyable.hpp:
-
-/usr/include/boost/system/detail/generic_category_message.hpp:
-
-/usr/include/boost/asio/detail/posix_global.hpp:
-
-/usr/include/bits/struct_rwlock.h:
-
-/usr/include/bits/sched.h:
-
-/usr/include/boost/asio/detail/reactor.hpp:
+/usr/include/c++/12.2.0/typeinfo:
 
 /usr/include/bits/atomic_wide_counter.h:
 
@@ -2466,11 +2313,259 @@ CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
 
 /usr/include/boost/asio/detail/consuming_buffers.hpp:
 
-/usr/include/boost/predef/other.h:
+/usr/include/boost/preprocessor/variadic/limits/size_64.hpp:
 
-/usr/include/bits/types/clockid_t.h:
+/usr/include/boost/asio/ssl/verify_context.hpp:
 
-/usr/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:
+/usr/include/boost/mpl/aux_/msvc_eti_base.hpp:
+
+/usr/include/boost/asio/execution/blocking.hpp:
+
+/usr/include/bits/waitflags.h:
+
+/usr/include/ctype.h:
+
+/usr/include/boost/mpl/identity.hpp:
+
+/usr/include/boost/asio/signal_set.hpp:
+
+/usr/include/bits/signum-generic.h:
+
+/usr/include/boost/preprocessor/repetition/enum_params.hpp:
+
+/usr/include/c++/12.2.0/ext/concurrence.h:
+
+/usr/include/sys/socket.h:
+
+/usr/include/limits.h:
+
+/usr/include/boost/asio/ssl/impl/context.hpp:
+
+/usr/include/boost/asio/execution/detail/as_operation.hpp:
+
+/usr/include/boost/asio/detail/thread_info_base.hpp:
+
+/usr/include/boost/asio/prefer.hpp:
+
+/usr/include/boost/asio/traits/execute_free.hpp:
+
+/usr/include/boost/system/detail/cerrno.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessed/gcc/apply_wrap.hpp:
+
+/usr/include/boost/asio/execution/prefer_only.hpp:
+
+/usr/include/c++/12.2.0/bits/alloc_traits.h:
+
+/usr/include/boost/asio/is_applicable_property.hpp:
+
+/usr/include/bits/types.h:
+
+/usr/include/boost/asio/impl/buffered_write_stream.hpp:
+
+/usr/include/boost/asio/ip/detail/endpoint.hpp:
+
+/usr/include/boost/asio/detail/noncopyable.hpp:
+
+/usr/include/boost/config/stdlib/libstdcpp3.hpp:
+
+/usr/include/boost/system/detail/generic_category_message.hpp:
+
+/usr/include/c++/12.2.0/bits/stl_construct.h:
+
+/usr/include/boost/asio/detail/posix_global.hpp:
+
+/usr/include/bits/struct_rwlock.h:
+
+/usr/include/boost/asio/detail/reactor.hpp:
+
+/usr/include/bits/sched.h:
+
+/usr/include/boost/predef/library/c/_prefix.h:
+
+/usr/include/c++/12.2.0/ext/alloc_traits.h:
+
+/usr/include/c++/12.2.0/bits/invoke.h:
+
+/usr/include/c++/12.2.0/x86_64-pc-linux-gnu/bits/os_defines.h:
+
+/usr/include/boost/system/detail/error_code.hpp:
+
+/usr/include/c++/12.2.0/bits/std_mutex.h:
+
+/usr/include/boost/asio/impl/connect_pipe.ipp:
+
+/usr/include/boost/asio/detail/resolve_op.hpp:
+
+/usr/include/c++/12.2.0/bits/basic_string.h:
+
+/usr/include/boost/date_time/gregorian/greg_day_of_year.hpp:
+
+/usr/include/linux/posix_types.h:
+
+/usr/include/boost/predef/architecture/alpha.h:
+
+/usr/include/bits/types/FILE.h:
+
+/usr/include/c++/12.2.0/initializer_list:
+
+/usr/include/boost/asio/impl/system_executor.hpp:
+
+/usr/include/c++/12.2.0/bits/predefined_ops.h:
+
+/usr/include/boost/asio/windows/basic_stream_handle.hpp:
+
+/usr/include/bits/types/struct_itimerspec.h:
+
+/usr/include/c++/12.2.0/chrono:
+
+/usr/include/boost/asio/detail/posix_mutex.hpp:
+
+/usr/include/boost/predef/detail/os_detected.h:
+
+/usr/include/bits/types/__fpos_t.h:
+
+/usr/include/bits/types/clock_t.h:
+
+/usr/include/c++/12.2.0/ext/numeric_traits.h:
+
+/usr/include/boost/mpl/aux_/config/lambda.hpp:
+
+/usr/include/boost/predef/compiler/llvm.h:
+
+/usr/include/c++/12.2.0/backward/binders.h:
+
+/usr/include/c++/12.2.0/bits/locale_facets.tcc:
+
+/usr/include/c++/12.2.0/bits/nested_exception.h:
+
+/usr/include/c++/12.2.0/bits/stl_pair.h:
+
+/usr/include/boost/asio/traits/require_concept_member.hpp:
+
+/usr/include/boost/asio/impl/append.hpp:
+
+/usr/include/bits/sigstack.h:
+
+/usr/include/bits/statx.h:
+
+/usr/include/boost/version.hpp:
+
+/usr/include/bits/xopen_lim.h:
+
+/usr/include/boost/asio/detail/keyword_tss_ptr.hpp:
+
+/usr/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:
+
+/usr/include/boost/system/detail/system_category.hpp:
+
+/usr/include/alloca.h:
+
+/usr/include/bits/sigstksz.h:
+
+/usr/include/c++/12.2.0/bits/ptr_traits.h:
+
+/usr/include/boost/asio/execution/impl/receiver_invocation_error.ipp:
+
+/usr/include/boost/system/detail/error_category.hpp:
+
+/usr/include/boost/predef/library/std/msl.h:
+
+/usr/include/sys/ucontext.h:
+
+/usr/include/boost/date_time/gregorian_calendar.ipp:
+
+/usr/include/boost/asio/ssl/impl/rfc2818_verification.ipp:
+
+/usr/include/boost/mpl/aux_/config/intel.hpp:
+
+/usr/include/c++/12.2.0/ext/string_conversions.h:
+
+/usr/include/boost/numeric/conversion/udt_builtin_mixture_enum.hpp:
+
+/usr/include/boost/predef/architecture/ppc.h:
+
+/usr/include/bits/types/time_t.h:
+
+/usr/include/boost/system/detail/error_condition.hpp:
+
+/usr/include/bits/sigevent-consts.h:
+
+/usr/include/boost/preprocessor/facilities/expand.hpp:
+
+/usr/include/boost/bind/arg.hpp:
+
+/usr/include/c++/12.2.0/bits/ostream_insert.h:
+
+/usr/include/boost/mpl/has_xxx.hpp:
+
+/usr/include/c++/12.2.0/bits/functional_hash.h:
+
+/usr/include/boost/asio/impl/prepend.hpp:
+
+/usr/include/boost/asio/detail/std_fenced_block.hpp:
+
+/usr/include/bits/termios-c_iflag.h:
+
+/usr/include/boost/mpl/aux_/static_cast.hpp:
+
+/usr/include/openssl/pkcs7err.h:
+
+/usr/include/stdlib.h:
+
+/usr/include/boost/date_time/locale_config.hpp:
+
+/usr/include/boost/predef/version.h:
+
+/usr/include/c++/12.2.0/cctype:
+
+/usr/include/gnu/stubs.h:
+
+/usr/include/boost/predef/platform/windows_system.h:
+
+/usr/include/boost/asio/detail/impl/thread_context.ipp:
+
+/usr/include/boost/predef/architecture/x86.h:
+
+/usr/include/c++/12.2.0/bits/specfun.h:
+
+/usr/include/bits/types/locale_t.h:
+
+/usr/include/bits/time.h:
+
+/usr/include/boost/asio/traits/submit_free.hpp:
+
+/usr/include/c++/12.2.0/bits/shared_ptr.h:
+
+/usr/include/c++/12.2.0/bits/concept_check.h:
+
+/usr/include/boost/asio/traits/require_member.hpp:
+
+/usr/include/boost/preprocessor/arithmetic/sub.hpp:
+
+/usr/include/c++/12.2.0/limits:
+
+/usr/include/bits/types/mbstate_t.h:
+
+/usr/include/bits/libc-header-start.h:
+
+/usr/include/linux/limits.h:
+
+/usr/include/c++/12.2.0/bits/char_traits.h:
+
+/usr/include/boost/asio/ip/impl/address_v4.ipp:
+
+/usr/include/boost/asio/detail/io_object_impl.hpp:
+
+/usr/include/c++/12.2.0/mutex:
+
+/usr/include/boost/asio/execution/scheduler.hpp:
+
+/usr/include/bits/stat.h:
+
+/usr/include/boost/asio/detail/utility.hpp:
+
+/usr/include/boost/mpl/aux_/lambda_arity_param.hpp:
 
 /usr/include/boost/predef/other/wordsize.h:
 
@@ -2480,13 +2575,331 @@ CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
 
 /usr/include/boost/numeric/conversion/detail/conversion_traits.hpp:
 
-/usr/include/bits/types/clock_t.h:
+/usr/include/bits/pthreadtypes-arch.h:
 
-/usr/include/boost/mpl/aux_/arithmetic_op.hpp:
+/usr/include/boost/preprocessor/repeat.hpp:
 
-/usr/include/c++/12.2.0/bits/stl_vector.h:
+/usr/include/boost/asio/detail/reactive_descriptor_service.hpp:
 
-/usr/include/boost/mpl/aux_/preprocessor/params.hpp:
+/usr/include/stdio.h:
+
+/usr/include/boost/system/detail/std_category_impl.hpp:
+
+/usr/include/boost/predef/compiler/watcom.h:
+
+/usr/include/boost/asio/handler_alloc_hook.hpp:
+
+/usr/include/c++/12.2.0/iosfwd:
+
+/usr/include/boost/preprocessor/list/detail/limits/fold_left_256.hpp:
+
+/usr/include/boost/config/detail/posix_features.hpp:
+
+/usr/include/c++/12.2.0/bits/exception_defines.h:
+
+/usr/include/c++/12.2.0/vector:
+
+/usr/include/boost/preprocessor/arithmetic/add.hpp:
+
+/usr/include/c++/12.2.0/bits/stringfwd.h:
+
+/usr/include/boost/asio/detail/scoped_ptr.hpp:
+
+/usr/include/c++/12.2.0/bits/basic_string.tcc:
+
+/usr/include/features-time64.h:
+
+/usr/include/boost/asio/file_base.hpp:
+
+/usr/include/boost/asio/write.hpp:
+
+/usr/include/boost/asio/detail/impl/strand_executor_service.ipp:
+
+/usr/include/c++/12.2.0/bits/memoryfwd.h:
+
+/usr/include/boost/asio/execution/outstanding_work.hpp:
+
+/usr/include/openssl/ssl2.h:
+
+/usr/include/boost/asio/local/stream_protocol.hpp:
+
+/usr/include/boost/asio/detail/timer_queue_ptime.hpp:
+
+/usr/include/boost/asio/detail/strand_service.hpp:
+
+/usr/include/c++/12.2.0/bits/hash_bytes.h:
+
+/usr/include/stdc-predef.h:
+
+/usr/include/openssl/hmac.h:
+
+/usr/include/c++/12.2.0/bits/stl_tempbuf.h:
+
+/usr/include/boost/asio/detail/deadline_timer_service.hpp:
+
+/usr/include/pthread.h:
+
+/usr/include/boost/date_time/period.hpp:
+
+/usr/include/boost/asio/serial_port_base.hpp:
+
+/usr/include/boost/predef/architecture/sys390.h:
+
+/usr/include/sys/cdefs.h:
+
+/usr/include/boost/asio/impl/read_until.hpp:
+
+/usr/include/boost/asio/is_executor.hpp:
+
+/usr/include/c++/12.2.0/bits/shared_ptr_base.h:
+
+/usr/include/boost/asio/static_thread_pool.hpp:
+
+/usr/include/boost/date_time/time_defs.hpp:
+
+/usr/include/asm/types.h:
+
+/usr/include/asm/posix_types_64.h:
+
+/usr/include/boost/date_time/time_duration.hpp:
+
+/usr/include/c++/12.2.0/bits/stl_algobase.h:
+
+/usr/include/c++/12.2.0/bits/std_function.h:
+
+/usr/include/boost/asio/detail/cstdint.hpp:
+
+/usr/include/c++/12.2.0/bit:
+
+/usr/include/boost/date_time/date_duration.hpp:
+
+/usr/include/boost/predef/platform/android.h:
+
+/usr/include/boost/asio/detail/config.hpp:
+
+/usr/include/c++/12.2.0/x86_64-pc-linux-gnu/bits/c++config.h:
+
+/usr/include/boost/mpl/aux_/comparison_op.hpp:
+
+/usr/include/bits/long-double.h:
+
+/usr/include/boost/mpl/aux_/template_arity_fwd.hpp:
+
+/usr/include/boost/asio/detail/concurrency_hint.hpp:
+
+/usr/include/bits/byteswap.h:
+
+/usr/include/c++/12.2.0/debug/assertions.h:
+
+/usr/include/boost/cerrno.hpp:
+
+/usr/include/bits/posix_opt.h:
+
+/usr/include/boost/asio/detail/signal_blocker.hpp:
+
+/usr/include/c++/12.2.0/string:
+
+/usr/include/boost/asio/detail/cstddef.hpp:
+
+/usr/include/boost/asio/detail/global.hpp:
+
+/usr/include/c++/12.2.0/bits/enable_special_members.h:
+
+/usr/include/boost/asio/basic_stream_file.hpp:
+
+/usr/include/c++/12.2.0/bits/cpp_type_traits.h:
+
+/usr/include/boost/asio/system_context.hpp:
+
+/usr/include/sys/types.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0/include/stdint.h:
+
+/usr/include/bits/struct_mutex.h:
+
+/usr/include/bits/types/timer_t.h:
+
+/usr/include/c++/12.2.0/atomic:
+
+/usr/include/boost/predef/os/beos.h:
+
+/usr/include/bits/posix2_lim.h:
+
+/usr/include/c++/12.2.0/type_traits:
+
+/usr/include/c++/12.2.0/cstdarg:
+
+/usr/include/boost/asio/detail/posix_event.hpp:
+
+/usr/include/boost/asio/impl/thread_pool.ipp:
+
+/usr/include/boost/asio/traits/set_done_member.hpp:
+
+/usr/include/stdint.h:
+
+/home/jerry/Code/Stonks/stonks.cpp:
+
+/usr/include/endian.h:
+
+/usr/include/boost/asio/traits/execute_member.hpp:
+
+/usr/include/c++/12.2.0/x86_64-pc-linux-gnu/bits/cpu_defines.h:
+
+/usr/include/openssl/crypto.h:
+
+/usr/include/boost/predef/language/objc.h:
+
+/usr/include/bits/timesize.h:
+
+/usr/include/c++/12.2.0/cstring:
+
+/usr/include/boost/predef/os/solaris.h:
+
+/usr/include/bits/stdlib-float.h:
+
+/usr/include/bits/types/sig_atomic_t.h:
+
+/usr/include/boost/asio/detail/impl/signal_set_service.ipp:
+
+/usr/include/openssl/ossl_typ.h:
+
+/usr/include/bits/typesizes.h:
+
+/usr/include/boost/asio/basic_stream_socket.hpp:
+
+/usr/include/c++/12.2.0/bits/stl_raw_storage_iter.h:
+
+/usr/include/c++/12.2.0/x86_64-pc-linux-gnu/bits/c++locale.h:
+
+/usr/include/c++/12.2.0/ios:
+
+/usr/include/boost/preprocessor/debug/error.hpp:
+
+/usr/include/bits/types/struct_timespec.h:
+
+/usr/include/boost/predef/compiler/microtec.h:
+
+/usr/include/bits/time64.h:
+
+/usr/include/c++/12.2.0/bits/shared_ptr_atomic.h:
+
+/usr/include/bits/netdb.h:
+
+/usr/include/c++/12.2.0/x86_64-pc-linux-gnu/bits/c++allocator.h:
+
+/usr/include/bits/local_lim.h:
+
+/usr/include/c++/12.2.0/bits/postypes.h:
+
+/usr/include/c++/12.2.0/bits/node_handle.h:
+
+/usr/include/boost/system/system_error.hpp:
+
+/usr/include/boost/asio/basic_socket.hpp:
+
+/usr/include/boost/asio/detail/impl/timer_queue_ptime.ipp:
+
+/usr/include/boost/predef/other.h:
+
+/usr/include/bits/types/clockid_t.h:
+
+/usr/include/boost/smart_ptr/detail/sp_thread_sleep.hpp:
+
+/usr/include/bits/uintn-identity.h:
+
+/usr/include/linux/close_range.h:
+
+/usr/include/boost/smart_ptr/detail/spinlock.hpp:
+
+/usr/include/boost/preprocessor/tuple/detail/is_single_return.hpp:
+
+/usr/include/linux/stat.h:
+
+/usr/include/c++/12.2.0/bits/locale_facets.h:
+
+/usr/include/boost/assert/source_location.hpp:
+
+/usr/include/boost/asio/ip/impl/address_v6.ipp:
+
+/usr/include/boost/asio/prepend.hpp:
+
+/usr/include/bits/wordsize.h:
+
+/usr/include/bits/posix1_lim.h:
+
+/usr/include/boost/asio/detail/eventfd_select_interrupter.hpp:
+
+/usr/include/boost/asio/detail/impl/handler_tracking.ipp:
+
+/usr/include/boost/numeric/conversion/detail/is_subranged.hpp:
+
+/usr/include/boost/predef/compiler/gcc_xml.h:
+
+/usr/include/boost/system/detail/generic_category.hpp:
+
+/usr/include/c++/12.2.0/bits/localefwd.h:
+
+/usr/include/c++/12.2.0/bits/sstream.tcc:
+
+/usr/include/boost/asio/traits/set_error_free.hpp:
+
+/usr/include/boost/numeric/conversion/cast.hpp:
+
+/usr/include/bits/floatn.h:
+
+/usr/include/boost/system/detail/std_category.hpp:
+
+/usr/include/c++/12.2.0/bits/cxxabi_init_exception.h:
+
+/usr/include/boost/preprocessor/config/limits.hpp:
+
+/usr/include/boost/asio/detail/service_registry.hpp:
+
+/usr/include/boost/asio/execution/detail/as_invocable.hpp:
+
+/usr/include/boost/asio/connect.hpp:
+
+/usr/include/locale.h:
+
+/usr/include/boost/asio/basic_file.hpp:
+
+/usr/include/c++/12.2.0/bits/stl_iterator.h:
+
+/usr/include/boost/asio/ip/basic_resolver_iterator.hpp:
+
+/usr/include/c++/12.2.0/cerrno:
+
+/usr/include/boost/asio/error.hpp:
+
+/usr/include/asm-generic/errno-base.h:
+
+/usr/include/openssl/cterr.h:
+
+/usr/include/c++/12.2.0/bits/atomic_lockfree_defines.h:
+
+/usr/include/boost/date_time/posix_time/posix_time_system.hpp:
+
+/usr/include/boost/asio/detail/regex_fwd.hpp:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/include/sys/single_threaded.h:
+
+/usr/include/c++/12.2.0/tr1/special_function_util.h:
+
+/usr/include/boost/preprocessor/repetition/limits/repeat_256.hpp:
+
+/usr/include/bits/types/error_t.h:
+
+/usr/include/boost/asio/detail/timer_queue_set.hpp:
+
+/usr/include/boost/mpl/less.hpp:
+
+/usr/include/bits/pthreadtypes.h:
+
+/usr/include/boost/asio/execution/detail/bulk_sender.hpp:
+
+/usr/include/bits/signum-arch.h:
 
 /usr/include/boost/asio/dispatch.hpp:
 
@@ -2506,162 +2919,6 @@ CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
 
 /usr/include/boost/type_traits/is_base_of.hpp:
 
-/usr/include/features.h:
-
-/usr/include/c++/12.2.0/iterator:
-
-/usr/include/bits/types/__FILE.h:
-
-/usr/include/boost/mpl/limits/arity.hpp:
-
-/usr/include/boost/asio/detail/signal_op.hpp:
-
-/usr/include/linux/posix_types.h:
-
-/usr/include/boost/predef/architecture/alpha.h:
-
-/usr/include/bits/types/FILE.h:
-
-/usr/include/c++/12.2.0/bits/basic_string.h:
-
-/usr/include/boost/date_time/gregorian/greg_day_of_year.hpp:
-
-/usr/include/boost/config.hpp:
-
-/usr/include/bits/types/__fpos64_t.h:
-
-/usr/include/features-time64.h:
-
-/usr/include/openssl/ssl2.h:
-
-/usr/include/boost/asio/local/stream_protocol.hpp:
-
-/usr/include/c++/12.2.0/pstl/pstl_config.h:
-
-/usr/include/bits/types/struct_FILE.h:
-
-/usr/include/c++/12.2.0/cstdio:
-
-/usr/include/c++/12.2.0/sstream:
-
-/usr/include/bits/types/__mbstate_t.h:
-
-/usr/include/boost/asio/is_write_buffered.hpp:
-
-/usr/include/bits/stdio_lim.h:
-
-/usr/include/boost/smart_ptr/detail/sp_counted_base.hpp:
-
-/usr/include/c++/12.2.0/bits/stl_construct.h:
-
-/usr/include/boost/asio/traits/submit_free.hpp:
-
-/usr/include/bits/time.h:
-
-/usr/include/boost/asio/traits/set_error_free.hpp:
-
-/usr/include/boost/numeric/conversion/cast.hpp:
-
-/usr/include/bits/floatn.h:
-
-/usr/include/boost/system/detail/std_category.hpp:
-
-/usr/include/bits/pthreadtypes-arch.h:
-
-/usr/include/c++/12.2.0/bits/functional_hash.h:
-
-/usr/include/boost/asio/write.hpp:
-
-/usr/include/boost/asio/file_base.hpp:
-
-/usr/include/boost/asio/impl/prepend.hpp:
-
-/usr/include/bits/libc-header-start.h:
-
-/usr/include/openssl/hmac.h:
-
-/usr/include/c++/12.2.0/bits/stl_tempbuf.h:
-
-/usr/include/boost/asio/detail/deadline_timer_service.hpp:
-
-/usr/include/pthread.h:
-
-/usr/include/boost/date_time/period.hpp:
-
-/usr/include/boost/asio/serial_port_base.hpp:
-
-/usr/include/boost/asio/detail/impl/strand_executor_service.ipp:
-
-/usr/include/boost/asio/execution/outstanding_work.hpp:
-
-/usr/include/c++/12.2.0/bits/memoryfwd.h:
-
-/usr/include/boost/preprocessor/variadic/limits/size_64.hpp:
-
-/usr/include/boost/asio/ssl/verify_context.hpp:
-
-/usr/include/boost/mpl/aux_/msvc_eti_base.hpp:
-
-/usr/include/c++/12.2.0/bits/shared_ptr_base.h:
-
-/usr/include/boost/asio/static_thread_pool.hpp:
-
-/usr/include/boost/date_time/time_defs.hpp:
-
-/usr/include/boost/predef/library/std/msl.h:
-
-/usr/include/sys/ucontext.h:
-
-/usr/include/boost/system/detail/error_category.hpp:
-
-/usr/include/boost/date_time/gregorian_calendar.ipp:
-
-/usr/include/boost/asio/ssl/impl/rfc2818_verification.ipp:
-
-/usr/include/boost/mpl/aux_/config/intel.hpp:
-
-/usr/include/boost/config/workaround.hpp:
-
-/usr/include/boost/asio/impl/any_io_executor.ipp:
-
-/usr/include/boost/mpl/aux_/preprocessor/enum.hpp:
-
-/usr/include/boost/asio/detail/timer_queue_ptime.hpp:
-
-/usr/include/boost/asio/detail/strand_service.hpp:
-
-/usr/include/c++/12.2.0/bits/hash_bytes.h:
-
-/usr/include/stdc-predef.h:
-
-/usr/include/boost/asio/detail/utility.hpp:
-
-/usr/include/boost/mpl/aux_/lambda_arity_param.hpp:
-
-/usr/include/boost/smart_ptr/detail/spinlock.hpp:
-
-/usr/include/boost/preprocessor/tuple/detail/is_single_return.hpp:
-
-/usr/include/c++/12.2.0/cstdint:
-
-/usr/include/bits/fcntl.h:
-
-/usr/include/boost/asio/detail/op_queue.hpp:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0/include-fixed/syslimits.h:
-
-/usr/include/boost/mpl/multiplies.hpp:
-
-/usr/include/bits/long-double.h:
-
-/usr/include/boost/mpl/aux_/template_arity_fwd.hpp:
-
-/usr/include/boost/asio/detail/cstdint.hpp:
-
-/usr/include/boost/predef/os/solaris.h:
-
-/usr/include/bits/stdlib-float.h:
-
 /usr/include/asm/sockios.h:
 
 /usr/include/boost/asio/execution/start.hpp:
@@ -2676,23 +2933,13 @@ CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
 
 /usr/include/boost/asio/detail/impl/timer_queue_set.ipp:
 
-/usr/include/boost/preprocessor/repeat.hpp:
+/usr/include/boost/config.hpp:
 
-/usr/include/boost/asio/detail/reactive_descriptor_service.hpp:
+/usr/include/boost/asio/local/detail/impl/endpoint.ipp:
 
-/usr/include/stdio.h:
+/usr/include/c++/12.2.0/cassert:
 
-/usr/include/boost/asio/detail/std_fenced_block.hpp:
-
-/usr/include/bits/termios-c_iflag.h:
-
-/usr/include/boost/mpl/aux_/static_cast.hpp:
-
-/usr/include/openssl/pkcs7err.h:
-
-/usr/include/stdlib.h:
-
-/usr/include/boost/date_time/locale_config.hpp:
+/usr/include/boost/asio/detail/scheduler_thread_info.hpp:
 
 /usr/include/boost/asio/execution.hpp:
 
@@ -2700,119 +2947,41 @@ CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
 
 /usr/include/boost/config/detail/select_compiler_config.hpp:
 
-/usr/include/c++/12.2.0/bits/node_handle.h:
-
-/usr/include/c++/12.2.0/bits/postypes.h:
-
-/usr/include/boost/asio/posix/basic_stream_descriptor.hpp:
-
-/usr/include/linux/version.h:
-
 /usr/include/c++/12.2.0/cstddef:
 
-/usr/include/asm/types.h:
+/usr/include/c++/12.2.0/cstdio:
 
-/usr/include/asm/posix_types_64.h:
+/usr/include/bits/types/struct_FILE.h:
 
-/usr/include/boost/date_time/time_duration.hpp:
+/usr/include/boost/mpl/aux_/arithmetic_op.hpp:
 
-/usr/include/c++/12.2.0/bits/stl_algobase.h:
+/usr/include/boost/mpl/aux_/preprocessor/params.hpp:
 
-/usr/include/c++/12.2.0/bits/std_function.h:
+/usr/include/c++/12.2.0/bits/stl_vector.h:
 
-/usr/include/boost/predef/platform/android.h:
+/usr/include/c++/12.2.0/clocale:
 
-/usr/include/boost/asio/detail/config.hpp:
+/usr/include/boost/asio/detail/reactive_socket_recvfrom_op.hpp:
 
-/usr/include/c++/12.2.0/x86_64-pc-linux-gnu/bits/c++config.h:
+/usr/include/boost/mpl/aux_/preprocessed/gcc/times.hpp:
 
-/usr/include/boost/mpl/aux_/comparison_op.hpp:
+/usr/include/bits/environments.h:
 
-/usr/include/linux/close_range.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0/include/stdarg.h:
 
-/usr/include/bits/uintn-identity.h:
+/usr/include/bits/uio-ext.h:
 
-/usr/include/boost/asio/ssl/detail/verify_callback.hpp:
+/usr/include/boost/date_time/special_defs.hpp:
 
-/usr/include/boost/asio/detail/scheduler_task.hpp:
+/usr/include/boost/system/detail/snprintf.hpp:
 
-/usr/include/boost/asio/detail/memory.hpp:
+/usr/include/boost/date_time/gregorian/greg_month.hpp:
 
-/usr/include/gnu/stubs.h:
-
-/usr/include/boost/predef/version.h:
-
-/usr/include/c++/12.2.0/cctype:
-
-/usr/include/bits/sigcontext.h:
-
-/usr/include/c++/12.2.0/bits/refwrap.h:
-
-/usr/include/boost/asio/detail/scoped_ptr.hpp:
-
-/usr/include/c++/12.2.0/bits/basic_string.tcc:
-
-/usr/include/openssl/ossl_typ.h:
-
-/usr/include/bits/typesizes.h:
-
-/usr/include/boost/asio/basic_stream_socket.hpp:
-
-/usr/include/c++/12.2.0/bits/stl_raw_storage_iter.h:
-
-/usr/include/c++/12.2.0/bits/exception.h:
-
-/usr/include/boost/asio/basic_socket_acceptor.hpp:
-
-/usr/include/boost/asio/traits/execute_member.hpp:
-
-/usr/include/c++/12.2.0/x86_64-pc-linux-gnu/bits/cpu_defines.h:
-
-/usr/include/openssl/crypto.h:
-
-/usr/include/boost/predef/language/objc.h:
-
-/usr/include/bits/timesize.h:
-
-/usr/include/c++/12.2.0/cstring:
-
-/usr/include/c++/12.2.0/ctime:
-
-/usr/include/boost/asio/basic_readable_pipe.hpp:
-
-/usr/include/boost/asio/ip/impl/network_v4.ipp:
-
-/usr/include/c++/12.2.0/ext/numeric_traits.h:
-
-/usr/include/boost/mpl/aux_/config/lambda.hpp:
-
-/usr/include/boost/preprocessor/list/reverse.hpp:
-
-/usr/include/boost/asio/basic_streambuf_fwd.hpp:
-
-/usr/include/bits/errno.h:
-
-/usr/include/boost/config/detail/cxx_composite.hpp:
-
-/usr/include/boost/asio/is_contiguous_iterator.hpp:
-
-/usr/include/boost/smart_ptr/bad_weak_ptr.hpp:
-
-/usr/include/boost/date_time/time.hpp:
-
-/usr/include/c++/12.2.0/typeinfo:
+/usr/include/boost/preprocessor/list/detail/fold_right.hpp:
 
 /usr/include/boost/asio/detail/call_stack.hpp:
 
 /usr/include/bits/confname.h:
-
-/usr/include/bits/types.h:
-
-/usr/include/boost/asio/is_applicable_property.hpp:
-
-/usr/include/boost/asio/impl/buffered_write_stream.hpp:
-
-/usr/include/boost/asio/ip/detail/endpoint.hpp:
 
 /usr/include/boost/limits.hpp:
 
@@ -2821,12 +2990,6 @@ CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
 /usr/include/c++/12.2.0/bits/unordered_map.h:
 
 /usr/include/bits/getopt_core.h:
-
-/usr/include/boost/asio/ssl/context.hpp:
-
-/usr/include/boost/date_time/time_clock.hpp:
-
-/usr/include/boost/asio/impl/io_context.ipp:
 
 /usr/include/boost/smart_ptr/shared_ptr.hpp:
 
@@ -2842,63 +3005,95 @@ CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
 
 /usr/include/boost/mpl/times.hpp:
 
-/usr/include/bits/signum-arch.h:
+/usr/include/boost/config/detail/suffix.hpp:
 
-/usr/include/boost/asio/execution/detail/bulk_sender.hpp:
+/usr/include/boost/asio/query.hpp:
 
-/usr/include/boost/predef/platform/windows_system.h:
+/usr/include/boost/asio/async_result.hpp:
 
-/usr/include/boost/asio/detail/impl/thread_context.ipp:
+/usr/include/boost/mpl/aux_/config/eti.hpp:
 
-/usr/include/boost/predef/architecture/x86.h:
+/usr/include/boost/config/detail/cxx_composite.hpp:
 
-/usr/include/c++/12.2.0/bits/specfun.h:
+/usr/include/c++/12.2.0/tuple:
 
-/usr/include/bits/types/timer_t.h:
+/usr/include/boost/config/workaround.hpp:
 
-/usr/include/c++/12.2.0/atomic:
+/usr/include/boost/mpl/aux_/preprocessor/enum.hpp:
 
-/usr/include/boost/asio/execution/blocking.hpp:
+/usr/include/boost/asio/impl/any_io_executor.ipp:
 
-/usr/include/bits/waitflags.h:
+/usr/include/boost/asio/basic_socket_acceptor.hpp:
 
-/usr/include/ctype.h:
+/usr/include/c++/12.2.0/bits/exception.h:
 
-/usr/include/sys/socket.h:
+/usr/include/boost/mpl/void.hpp:
 
-/usr/include/c++/12.2.0/ext/concurrence.h:
+/usr/include/boost/asio/detail/type_traits.hpp:
 
-/usr/include/limits.h:
+/usr/include/linux/version.h:
+
+/usr/include/boost/asio/posix/basic_stream_descriptor.hpp:
+
+/usr/include/boost/asio/detail/pop_options.hpp:
+
+/usr/include/boost/asio/ssl/context.hpp:
+
+/usr/include/boost/asio/impl/io_context.ipp:
+
+/usr/include/boost/date_time/time_clock.hpp:
+
+/usr/include/boost/mpl/aux_/preprocessor/def_params_tail.hpp:
+
+/usr/include/features.h:
+
+/usr/include/c++/12.2.0/iterator:
+
+/usr/include/bits/types/__FILE.h:
+
+/usr/include/boost/mpl/limits/arity.hpp:
+
+/usr/include/boost/asio/detail/signal_op.hpp:
+
+/usr/include/c++/12.2.0/ctime:
+
+/usr/include/boost/asio/basic_readable_pipe.hpp:
+
+/usr/include/boost/asio/ip/impl/network_v4.ipp:
+
+/usr/include/boost/asio/detail/handler_alloc_helpers.hpp:
+
+/usr/include/boost/asio/impl/execution_context.ipp:
+
+/usr/include/boost/asio/generic/detail/impl/endpoint.ipp:
+
+/usr/include/boost/asio/ssl/detail/verify_callback.hpp:
+
+/usr/include/boost/asio/detail/scheduler_task.hpp:
+
+/usr/include/bits/sigcontext.h:
+
+/usr/include/c++/12.2.0/bits/refwrap.h:
+
+/usr/include/boost/asio/detail/memory.hpp:
+
+/usr/include/boost/asio/detail/fenced_block.hpp:
+
+/usr/include/boost/asio/detail/handler_type_requirements.hpp:
+
+/usr/include/boost/numeric/conversion/detail/udt_builtin_mixture.hpp:
+
+/usr/include/c++/12.2.0/memory:
+
+/usr/include/bits/errno.h:
+
+/usr/include/boost/preprocessor/list/reverse.hpp:
+
+/usr/include/boost/asio/basic_streambuf_fwd.hpp:
 
 /usr/include/c++/12.2.0/bits/stl_uninitialized.h:
 
-/usr/include/boost/asio/traits/execute_free.hpp:
-
-/usr/include/boost/system/detail/cerrno.hpp:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/apply_wrap.hpp:
-
-/usr/include/boost/asio/execution/prefer_only.hpp:
-
-/usr/include/c++/12.2.0/bits/alloc_traits.h:
-
-/usr/include/boost/asio/prefer.hpp:
-
 /usr/include/boost/numeric/conversion/converter.hpp:
-
-/usr/include/boost/date_time/date_duration.hpp:
-
-/usr/include/c++/12.2.0/bit:
-
-/usr/include/bits/types/mbstate_t.h:
-
-/usr/include/boost/asio/system_context.hpp:
-
-/usr/include/sys/types.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0/include/stdint.h:
-
-/usr/include/linux/limits.h:
 
 /usr/include/boost/mpl/aux_/numeric_cast_utils.hpp:
 
@@ -2906,15 +3101,15 @@ CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
 
 /usr/include/boost/asio/packaged_task.hpp:
 
-/usr/include/bits/types/struct___jmp_buf_tag.h:
-
-/usr/include/boost/smart_ptr/detail/spinlock_pool.hpp:
-
 /usr/include/boost/asio/execution/bulk_execute.hpp:
 
 /usr/include/c++/12.2.0/x86_64-pc-linux-gnu/bits/gthr.h:
 
 /usr/include/bits/wchar.h:
+
+/usr/include/bits/types/struct___jmp_buf_tag.h:
+
+/usr/include/boost/smart_ptr/detail/spinlock_pool.hpp:
 
 /usr/include/boost/asio/traits/start_free.hpp:
 
@@ -2922,79 +3117,17 @@ CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
 
 /usr/include/boost/preprocessor/comma_if.hpp:
 
-/usr/include/bits/types/locale_t.h:
+/usr/include/boost/smart_ptr/detail/local_counted_base.hpp:
 
-/usr/include/boost/asio/detail/keyword_tss_ptr.hpp:
+/usr/include/boost/preprocessor/variadic/limits/elem_64.hpp:
 
-/usr/include/boost/smart_ptr/detail/spinlock_gcc_atomic.hpp:
+/usr/include/boost/predef/hardware/simd/x86/versions.h:
 
-/usr/include/boost/asio/impl/thread_pool.ipp:
+/usr/include/boost/numeric/conversion/numeric_cast_traits.hpp:
 
-/usr/include/boost/asio/traits/set_done_member.hpp:
+/usr/include/c++/12.2.0/bits/atomic_base.h:
 
-/home/jerry/Code/Stonks/stonks.cpp:
-
-/usr/include/endian.h:
-
-/usr/include/stdint.h:
-
-/usr/include/boost/asio/signal_set.hpp:
-
-/usr/include/bits/signum-generic.h:
-
-/usr/include/boost/preprocessor/repetition/enum_params.hpp:
-
-/usr/include/boost/asio/ssl/impl/context.hpp:
-
-/usr/include/boost/asio/execution/detail/as_operation.hpp:
-
-/usr/include/boost/asio/detail/thread_info_base.hpp:
-
-/usr/include/boost/predef/os/beos.h:
-
-/usr/include/c++/12.2.0/type_traits:
-
-/usr/include/bits/posix2_lim.h:
-
-/usr/include/boost/asio/detail/scheduler_thread_info.hpp:
-
-/usr/include/c++/12.2.0/cassert:
-
-/usr/include/c++/12.2.0/bits/stringfwd.h:
-
-/usr/include/bits/wordsize.h:
-
-/usr/include/bits/posix1_lim.h:
-
-/usr/include/boost/preprocessor/config/limits.hpp:
-
-/usr/include/boost/asio/detail/service_registry.hpp:
-
-/usr/include/boost/asio/execution/detail/as_invocable.hpp:
-
-/usr/include/boost/asio/connect.hpp:
-
-/usr/include/boost/asio/local/detail/impl/endpoint.ipp:
-
-/usr/include/c++/12.2.0/ios:
-
-/usr/include/c++/12.2.0/x86_64-pc-linux-gnu/bits/c++locale.h:
-
-/usr/include/boost/preprocessor/debug/error.hpp:
-
-/usr/include/c++/12.2.0/bits/cxxabi_init_exception.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0/include/stdarg.h:
-
-/usr/include/bits/uio-ext.h:
-
-/usr/include/boost/date_time/special_defs.hpp:
-
-/usr/include/boost/preprocessor/list/detail/fold_right.hpp:
-
-/usr/include/c++/12.2.0/clocale:
-
-/usr/include/boost/asio/detail/reactive_socket_recvfrom_op.hpp:
+/usr/include/c++/12.2.0/ext/atomicity.h:
 
 /usr/include/c++/12.2.0/ext/aligned_buffer.h:
 
@@ -3018,6 +3151,14 @@ CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
 
 /usr/include/bits/setjmp.h:
 
+/usr/include/bits/stdint-uintn.h:
+
+/usr/include/boost/asio/execution/detail/as_receiver.hpp:
+
+/usr/include/boost/asio/detail/thread_context.hpp:
+
+/usr/include/boost/asio/detail/tss_ptr.hpp:
+
 /usr/include/bits/pthread_stack_min-dynamic.h:
 
 /usr/include/c++/12.2.0/bits/std_thread.h:
@@ -3026,16 +3167,6 @@ CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
 
 /usr/include/boost/mpl/tag.hpp:
 
-/usr/include/sys/single_threaded.h:
-
-/usr/include/boost/asio/detail/regex_fwd.hpp:
-
-/usr/include/asm-generic/errno.h:
-
-/usr/include/c++/12.2.0/tr1/special_function_util.h:
-
-/usr/include/boost/preprocessor/repetition/limits/repeat_256.hpp:
-
 /usr/include/c++/12.2.0/bits/allocator.h:
 
 /usr/include/c++/12.2.0/exception:
@@ -3043,44 +3174,6 @@ CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
 /usr/include/boost/assert.hpp:
 
 /usr/include/boost/asio/ip/impl/address_v6.hpp:
-
-/usr/include/bits/types/struct_timespec.h:
-
-/usr/include/boost/predef/compiler/microtec.h:
-
-/usr/include/bits/time64.h:
-
-/usr/include/c++/12.2.0/bits/shared_ptr_atomic.h:
-
-/usr/include/boost/smart_ptr/detail/local_counted_base.hpp:
-
-/usr/include/boost/preprocessor/variadic/limits/elem_64.hpp:
-
-/usr/include/boost/predef/hardware/simd/x86/versions.h:
-
-/usr/include/boost/numeric/conversion/numeric_cast_traits.hpp:
-
-/usr/include/c++/12.2.0/ext/atomicity.h:
-
-/usr/include/c++/12.2.0/bits/atomic_base.h:
-
-/usr/include/boost/asio/basic_file.hpp:
-
-/usr/include/c++/12.2.0/bits/stl_iterator.h:
-
-/usr/include/boost/asio/ip/basic_resolver_iterator.hpp:
-
-/usr/include/c++/12.2.0/cerrno:
-
-/usr/include/boost/asio/error.hpp:
-
-/usr/include/asm-generic/errno-base.h:
-
-/usr/include/openssl/cterr.h:
-
-/usr/include/c++/12.2.0/bits/atomic_lockfree_defines.h:
-
-/usr/include/boost/date_time/posix_time/posix_time_system.hpp:
 
 /usr/include/c++/12.2.0/pstl/glue_memory_defs.h:
 
@@ -3092,101 +3185,11 @@ CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
 
 /usr/include/boost/asio/detail/throw_exception.hpp:
 
-/usr/include/boost/asio/detail/posix_event.hpp:
-
-/usr/include/c++/12.2.0/cstdarg:
-
-/usr/include/boost/mpl/identity.hpp:
-
-/usr/include/boost/predef/architecture/ppc.h:
-
-/usr/include/bits/types/time_t.h:
-
-/usr/include/c++/12.2.0/ext/string_conversions.h:
-
-/usr/include/boost/numeric/conversion/udt_builtin_mixture_enum.hpp:
-
 /usr/include/c++/12.2.0/x86_64-pc-linux-gnu/bits/atomic_word.h:
 
 /usr/include/boost/asio/detail/conditionally_enabled_mutex.hpp:
 
 /usr/include/boost/date_time/date_clock_device.hpp:
-
-/usr/include/bits/posix_opt.h:
-
-/usr/include/boost/asio/detail/signal_blocker.hpp:
-
-/usr/include/c++/12.2.0/string:
-
-/usr/include/boost/asio/detail/cstddef.hpp:
-
-/usr/include/boost/asio/detail/global.hpp:
-
-/usr/include/c++/12.2.0/bits/enable_special_members.h:
-
-/usr/include/bits/environments.h:
-
-/usr/include/boost/mpl/aux_/preprocessed/gcc/times.hpp:
-
-/usr/include/boost/asio/basic_stream_file.hpp:
-
-/usr/include/c++/12.2.0/bits/char_traits.h:
-
-/usr/include/boost/asio/ip/impl/address_v4.ipp:
-
-/usr/include/boost/asio/detail/io_object_impl.hpp:
-
-/usr/include/boost/asio/detail/eventfd_select_interrupter.hpp:
-
-/usr/include/boost/asio/detail/impl/handler_tracking.ipp:
-
-/usr/include/boost/numeric/conversion/detail/is_subranged.hpp:
-
-/usr/include/boost/predef/compiler/gcc_xml.h:
-
-/usr/include/boost/system/detail/generic_category.hpp:
-
-/usr/include/c++/12.2.0/bits/localefwd.h:
-
-/usr/include/c++/12.2.0/bits/sstream.tcc:
-
-/usr/include/locale.h:
-
-/usr/include/c++/12.2.0/bits/ostream_insert.h:
-
-/usr/include/boost/mpl/has_xxx.hpp:
-
-/usr/include/c++/12.2.0/limits:
-
-/usr/include/c++/12.2.0/initializer_list:
-
-/usr/include/boost/asio/detail/impl/signal_set_service.ipp:
-
-/usr/include/bits/types/sig_atomic_t.h:
-
-/usr/include/boost/predef/detail/os_detected.h:
-
-/usr/include/bits/types/__fpos_t.h:
-
-/usr/include/bits/stdint-uintn.h:
-
-/usr/include/boost/asio/execution/detail/as_receiver.hpp:
-
-/usr/include/boost/asio/detail/thread_context.hpp:
-
-/usr/include/boost/asio/detail/tss_ptr.hpp:
-
-/usr/include/bits/types/error_t.h:
-
-/usr/include/boost/asio/detail/timer_queue_set.hpp:
-
-/usr/include/boost/mpl/less.hpp:
-
-/usr/include/boost/date_time/gregorian/greg_month.hpp:
-
-/usr/include/boost/system/detail/snprintf.hpp:
-
-/usr/include/bits/pthreadtypes.h:
 
 /usr/include/boost/asio/traits/query_free.hpp:
 
@@ -3237,6 +3240,8 @@ CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
 /usr/include/rpc/netdb.h:
 
 /usr/include/c++/12.2.0/bits/hashtable_policy.h:
+
+/usr/include/boost/asio/detail/socket_types.hpp:
 
 /usr/include/sys/ioctl.h:
 
@@ -3828,9 +3833,9 @@ CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
 
 /usr/include/boost/asio/detail/handler_tracking.hpp:
 
-/usr/include/boost/asio/high_resolution_timer.hpp:
-
 /usr/include/wctype.h:
+
+/usr/include/boost/asio/high_resolution_timer.hpp:
 
 /usr/include/boost/preprocessor/arithmetic/detail/is_maximum_number.hpp:
 
@@ -3960,9 +3965,9 @@ CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
 
 /usr/include/boost/asio/impl/buffered_read_stream.hpp:
 
-/usr/include/boost/asio/execution/context_as.hpp:
-
 /usr/lib/gcc/x86_64-pc-linux-gnu/12.2.0/include/stddef.h:
+
+/usr/include/boost/asio/execution/context_as.hpp:
 
 /usr/include/termios.h:
 
@@ -3990,17 +3995,17 @@ CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
 
 /usr/include/boost/asio/impl/serial_port_base.hpp:
 
-/usr/include/bits/types/__sigval_t.h:
-
 /usr/include/sys/select.h:
+
+/usr/include/bits/types/__sigval_t.h:
 
 /usr/include/boost/asio/detail/posix_serial_port_service.hpp:
 
 /usr/include/boost/asio/detail/impl/strand_service.hpp:
 
-/usr/include/bits/floatn-common.h:
-
 /usr/include/boost/asio/detail/winsock_init.hpp:
+
+/usr/include/bits/floatn-common.h:
 
 /usr/include/boost/asio/detail/impl/posix_serial_port_service.ipp:
 
@@ -4191,5 +4196,3 @@ CMakeFiles/Stonks.dir/stonks.cpp.o: /home/jerry/Code/Stonks/stonks.cpp \
 /usr/include/boost/config/detail/select_platform_config.hpp:
 
 /usr/include/boost/asio/random_access_file.hpp:
-
-/usr/include/boost/asio/read.hpp:
