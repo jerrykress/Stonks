@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/home/jerry/Code/Stonks/build",
-  "command": "/usr/bin/g++   -g -o CMakeFiles/Stonks.dir/stonks.cpp.o -c /home/jerry/Code/Stonks/stonks.cpp",
-  "file": "/home/jerry/Code/Stonks/stonks.cpp"
-}
-]
