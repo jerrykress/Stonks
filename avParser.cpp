@@ -7,6 +7,10 @@ struct Time
 {
     int hour, min, sec;
 
+    Time() : hour(0), min(0), sec(0) {}
+
+    Time(int hour, int min, int sec) : hour(hour), min(min), sec(sec) {}
+
     bool operator<(const Time &that) const
     {
         return (hour * 3600 + min * 60 + sec) < (that.hour * 3600 + that.min * 60 + that.sec);
@@ -26,6 +30,10 @@ struct Time
 struct Date
 {
     int year, month, day;
+
+    Date() : year(1970), month(12), day(31) {}
+
+    Date(int year, int month, int day) : year(year), month(month), day(day) {}
 
     bool operator<(const Date &that) const
     {
@@ -70,12 +78,30 @@ struct DataPoint
     Time time;
     float open, high, low, close, volume;
 
+    DataPoint() : open(0), high(0), low(0), close(0), volume(0)
+    {
+        date = Date();
+        time = Time();
+    }
+
+    DataPoint(int year, int month, int day, int hour, int min, int sec, float open, float high, float low, float close, float volume) : open(open), high(high), low(low), close(close), volume(volume)
+    {
+        date = Date(year, month, day);
+        time = Time(hour, min, sec);
+    }
+
     bool operator<(const DataPoint &that)
     {
+        return (date < that.date)   ? true
+               : (date > that.date) ? false
+                                    : (time < that.time);
     }
 
     bool operator>(const DataPoint &that)
     {
+        return (date > that.date)   ? true
+               : (date < that.date) ? false
+                                    : (time > that.time);
     }
 
     bool operator==(const DataPoint &that)
