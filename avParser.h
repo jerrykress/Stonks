@@ -138,30 +138,46 @@ std::ostream &operator<<(std::ostream &os, const DataPoint &that)
     return os;
 }
 
-std::vector<std::string> &regex_save(const std::string &s, std::regex &e)
+template <typename T>
+void regex_save(std::vector<T> &v, const std::string &s, std::regex &e, const std::function<T(const std::string &)> &f)
 {
-    std::vector<std::string> matches;
     std::smatch res;
     std::string::const_iterator searchStart(s.cbegin());
 
     while (std::regex_search(searchStart, s.cend(), res, e))
     {
-        matches.emplace_back(res[0]);
-        std::cout << res[0] << "\n";
+        v.emplace_back(f(res[0]));
         searchStart = res.suffix().first;
     }
-    return matches;
 }
 
-void parse_data(std::string &s)
+void parse_data(const std::string &s)
 {
     std::vector<Date> dates;
     std::vector<Time> times;
+    std::vector<float> open;
+    std::vector<float> high;
+    std::vector<float> low;
+    std::vector<float> close;
+    std::vector<float> volume;
 
     std::regex e_date_time("([0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2})");
-    std::regex e_open("([0-9]+.[0-9]+)(?=\",\\n\\s+\"2)");
-    std::regex e_high("([0-9]+.[0-9]+)(?=\",\\n\\s+\"3)");
-    std::regex e_low("([0-9]+.[0-9]+)(?=\",\\n\\s+\"4)");
-    std::regex e_close("([0-9]+.[0-9]+)(?=\",\\n\\s+\"5)");
+    std::regex e_open("([0-9]+\\.[0-9]+)(?=\",[\\w\\-\\s]+\"2)");
+    std::regex e_high("([0-9]+\\.[0-9]+)(?=\",[\\w\\-\\s]+\"3)");
+    std::regex e_low("([0-9]+\\.[0-9]+)(?=\",[\\w\\-\\s]+\"4)");
+    std::regex e_close("([0-9]+\\.[0-9]+)(?=\",[\\w\\-\\s]+\"5)");
     std::regex e_volume("([0-9]+.[0-9]*)(?=\"\\n\\s+})");
+
+    regex_save<float>(open, s, e_open, [](const std::string &s) -> float
+                      { return std::stof(s); });
+    regex_save<float>(high, s, e_high, [](const std::string &s) -> float
+                      { return std::stof(s); });
+    regex_save<float>(low, s, e_low, [](const std::string &s) -> float
+                      { return std::stof(s); });
+    regex_save<float>(close, s, e_close, [](const std::string &s) -> float
+                      { return std::stof(s); });
+    regex_save<float>(volume, s, e_volume, [](const std::string &s) -> float
+                      { return std::stof(s); });
+
+    std::cout << open.size() << high.size() << low.size() << close.size() << volume.size() << std::endl;
 }
