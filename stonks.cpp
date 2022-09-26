@@ -1,4 +1,5 @@
 #include "config.h"
+#include "avParser.h"
 #include <stdio.h>
 #include <boost/asio.hpp>
 #include <boost/asio/ssl.hpp>
@@ -72,13 +73,13 @@ int main(int argc, char *argv[])
     io::read(socket, response, ec);
 
     if (ec)
-        std::cout << "Error reading response from socket" << ec.message() << std::endl;
+        std::cout << "Error reading response from socket: " << ec.message() << std::endl;
 
     // storing response to string
     std::ostringstream ss;
     ss << std::istream(&response).rdbuf();
     std::string s = ss.str();
-    std::cout << s << std::endl;
+    parse_data(s);
 
     // joining context thread
     io_context.stop();

@@ -2,9 +2,12 @@
 #include <vector>
 #include <numeric>
 #include <string>
+#include <iostream>
+#include <regex>
 
-struct Time
+class Time
 {
+public:
     int hour, min, sec;
 
     Time() : hour(0), min(0), sec(0) {}
@@ -27,8 +30,15 @@ struct Time
     }
 };
 
-struct Date
+std::ostream &operator<<(std::ostream &os, const Time &that)
 {
+    os << "Time: " << that.hour << ":" << that.min << ":" << that.sec << "\n";
+    return os;
+}
+
+class Date
+{
+public:
     int year, month, day;
 
     Date() : year(1970), month(12), day(31) {}
@@ -72,8 +82,15 @@ private:
     { return (y % 4 == 0) && (y % 100 != 0 || y % 400 == 0); };
 };
 
-struct DataPoint
+std::ostream &operator<<(std::ostream &os, const Date &that)
 {
+    os << "Date: " << that.year << ":" << that.month << ":" << that.day << "\n";
+    return os;
+}
+
+class DataPoint
+{
+public:
     Date date;
     Time time;
     float open, high, low, close, volume;
@@ -110,6 +127,41 @@ struct DataPoint
     }
 };
 
-std::vector<DataPoint> parse_data(std::string &s)
+std::ostream &operator<<(std::ostream &os, const DataPoint &that)
 {
+    os << that.date << that.time
+       << "    Open: " << that.open << "\n"
+       << "    High: " << that.high << "\n"
+       << "    Low: " << that.low << "\n"
+       << "    Close: " << that.close << "\n"
+       << "    Volume: " << that.volume << "\n\n";
+    return os;
+}
+
+std::vector<std::string> &regex_save(const std::string &s, std::regex &e)
+{
+    std::vector<std::string> matches;
+    std::smatch res;
+    std::string::const_iterator searchStart(s.cbegin());
+
+    while (std::regex_search(searchStart, s.cend(), res, e))
+    {
+        matches.emplace_back(res[0]);
+        std::cout << res[0] << "\n";
+        searchStart = res.suffix().first;
+    }
+    return matches;
+}
+
+void parse_data(std::string &s)
+{
+    std::vector<Date> dates;
+    std::vector<Time> times;
+
+    std::regex e_date_time("([0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2})");
+    std::regex e_open("([0-9]+.[0-9]+)(?=\",\\n\\s+\"2)");
+    std::regex e_high("([0-9]+.[0-9]+)(?=\",\\n\\s+\"3)");
+    std::regex e_low("([0-9]+.[0-9]+)(?=\",\\n\\s+\"4)");
+    std::regex e_close("([0-9]+.[0-9]+)(?=\",\\n\\s+\"5)");
+    std::regex e_volume("([0-9]+.[0-9]*)(?=\"\\n\\s+})");
 }
