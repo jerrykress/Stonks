@@ -108,6 +108,8 @@ public:
         time = Time(hour, min, sec);
     }
 
+    DataPoint(Date d, Time t, float open, float high, float low, float close, float volume) : open(open), high(high), low(low), close(close), volume(volume), date(d), time(t) {}
+
     bool operator<(const DataPoint &that)
     {
         return (date < that.date)   ? true
@@ -150,17 +152,17 @@ public:
 template <typename T>
 void regex_save(std::vector<T> &v, const std::string &s, std::regex &e, const std::function<T(const std::string &)> &f)
 {
-    std::smatch res;
+    std::smatch sm;
     std::string::const_iterator searchStart(s.cbegin());
 
-    while (std::regex_search(searchStart, s.cend(), res, e))
+    while (std::regex_search(searchStart, s.cend(), sm, e))
     {
-        v.emplace_back(f(res[0]));
-        searchStart = res.suffix().first;
+        v.emplace_back(f(sm[0]));
+        searchStart = sm.suffix().first;
     }
 }
 
-void parse_data(const std::string &s)
+void parse_data(DataSet &d, const std::string &s)
 {
     std::vector<Date> dates;
     std::vector<Time> times;
@@ -201,6 +203,17 @@ void parse_data(const std::string &s)
 
     max_price = *std::max_element(high.begin(), high.end());
     min_price = *std::min_element(low.begin(), low.end());
+
+    d.size = dates.size();
+
+    for (int i = 0; i < d.size; i++)
+    {
+        d.data.emplace_back(DataPoint(
+            dates[i], times[i], open[i], high[i], low[i], close[i], volume[i]));
+    }
+
+    d.max_price = max_price;
+    d.min_price = min_price;
 
     // std::cout << dates.size() << times.size() << open.size() << high.size() << low.size() << close.size() << volume.size() << std::endl;
 }
