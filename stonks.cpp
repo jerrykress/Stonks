@@ -80,7 +80,7 @@ int main(int argc, char *argv[])
     ss << std::istream(&response).rdbuf();
     std::string s = ss.str();
     parse_data(s);
-    std::cout << s << std::endl;
+    // std::cout << s << std::endl;
 
     // joining context thread
     io_context.stop();
