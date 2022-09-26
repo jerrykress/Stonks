@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include <regex>
+#include <algorithm>
 
 class Time
 {
@@ -138,6 +139,14 @@ std::ostream &operator<<(std::ostream &os, const DataPoint &that)
     return os;
 }
 
+class DataSet
+{
+public:
+    float max_price, min_price;
+    int size;
+    std::vector<DataPoint> data;
+};
+
 template <typename T>
 void regex_save(std::vector<T> &v, const std::string &s, std::regex &e, const std::function<T(const std::string &)> &f)
 {
@@ -160,6 +169,8 @@ void parse_data(const std::string &s)
     std::vector<float> low;
     std::vector<float> close;
     std::vector<float> volume;
+
+    float max_price, min_price;
 
     std::regex e_date("([0-9]{4}-[0-9]{2}-[0-9]{2})(?= [0-9]{2}:[0-9]{2}:[0-9]{2}\":)");
     std::regex e_time("([0-9]{2}:[0-9]{2}:[0-9]{2})(?=\":)");
@@ -188,5 +199,8 @@ void parse_data(const std::string &s)
     regex_save<float>(volume, s, e_volume, [](const std::string &s) -> float
                       { return std::stof(s); });
 
-    std::cout << dates.size() << times.size() << open.size() << high.size() << low.size() << close.size() << volume.size() << std::endl;
+    max_price = *std::max_element(high.begin(), high.end());
+    min_price = *std::min_element(low.begin(), low.end());
+
+    // std::cout << dates.size() << times.size() << open.size() << high.size() << low.size() << close.size() << volume.size() << std::endl;
 }
