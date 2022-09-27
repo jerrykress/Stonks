@@ -149,6 +149,21 @@ public:
     std::vector<DataPoint> data;
 };
 
+std::ostream &operator<<(std::ostream &os, const DataSet &that)
+{
+    os << "\n";
+    os << "Max Price: " << that.max_price << "\n";
+    os << "Min Price: " << that.min_price << "\n";
+    os << "\n";
+
+    for (auto &d : that.data)
+    {
+        os << d << "\n";
+    }
+
+    return os;
+}
+
 template <typename T>
 void regex_save(std::vector<T> &v, const std::string &s, std::regex &e, const std::function<T(const std::string &)> &f)
 {
@@ -164,6 +179,8 @@ void regex_save(std::vector<T> &v, const std::string &s, std::regex &e, const st
 
 void parse_data(DataSet &d, const std::string &s)
 {
+    std::cout << "Parse data size: " << s.size() << std::endl;
+
     std::vector<Date> dates;
     std::vector<Time> times;
     std::vector<float> open;
@@ -204,16 +221,30 @@ void parse_data(DataSet &d, const std::string &s)
     max_price = *std::max_element(high.begin(), high.end());
     min_price = *std::min_element(low.begin(), low.end());
 
-    d.size = dates.size();
-
-    for (int i = 0; i < d.size; i++)
+    if (dates.size() == times.size() && times.size() == open.size() && open.size() == high.size() && high.size() == low.size() && low.size() == close.size() && close.size() == volume.size())
     {
-        d.data.emplace_back(DataPoint(
-            dates[i], times[i], open[i], high[i], low[i], close[i], volume[i]));
+        d.size = dates.size();
+
+        for (int i = 0; i < d.size; i++)
+        {
+            d.data.emplace_back(DataPoint(
+                dates[i], times[i], open[i], high[i], low[i], close[i], volume[i]));
+        }
+    }
+    else
+    {
+        std::cout << "DataPoint parameter size mismatch!\n"
+                  << "["
+                  << "dates:" << dates.size()
+                  << "times:" << times.size()
+                  << "open:" << open.size()
+                  << "high:" << high.size()
+                  << "low:" << low.size()
+                  << "close:" << close.size()
+                  << "volume:" << volume.size()
+                  << "]\n";
     }
 
     d.max_price = max_price;
     d.min_price = min_price;
-
-    // std::cout << dates.size() << times.size() << open.size() << high.size() << low.size() << close.size() << volume.size() << std::endl;
 }

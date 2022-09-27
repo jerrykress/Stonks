@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 20)
 include(CTest)
 enable_testing()
 
-add_executable(Stonks stonks.cpp config.h avParser.h)
+add_executable(Stonks stonks.cpp config.h common.h)
 
 find_package(OpenSSL REQUIRED)
 if (OPENSSL_FOUND)
