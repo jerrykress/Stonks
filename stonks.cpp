@@ -1,12 +1,5 @@
 #include "config.h"
 #include "common.h"
-#include <stdio.h>
-#include <boost/asio.hpp>
-#include <boost/asio/ssl.hpp>
-#include <iostream>
-#include <thread>
-#include <vector>
-#include <sstream>
 
 namespace io = boost::asio;
 namespace ip = io::ip;
@@ -63,9 +56,13 @@ int main(int argc, char *argv[])
         if (ec)
             std::cout << "Failed to handshake: " << ec.message() << std::endl;
 
+        API_Request r("GET");
+        r.add_param("function", "TIME_SERIES_INTRADAY");
+        r.add_param("symbol", "AAPL");
+        r.add_param("interval", "1min");
+        r.add_param("apikey", API_KEY);
         // API request
-        std::string request =
-            "GET /query?function=TIME_SERIES_INTRADAY&symbol=AAPL&interval=1min&apikey=" + API_KEY + " HTTP/1.1\r\n" + "Host: " + DOMAIN + "\r\n" + "Connection: close\r\n\r\n";
+        std::string request = r.to_string();
 
         // write request to buffer
         socket.write_some(io::buffer(request.data(), request.size()), ec);
