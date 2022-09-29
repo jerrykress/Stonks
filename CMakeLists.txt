@@ -1,11 +1,21 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(Stonks VERSION 0.1.0)
 set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include(CTest)
 enable_testing()
 
-add_executable(Stonks stonks.cpp config.h common.h)
+file(GLOB src_files CONFIGURE_DEPENDS
+     "Xcurse/src/*.cpp"
+     "Xcurse/src/Common/*.cpp"
+     "Xcurse/src/Display/*.cpp"
+     "Xcurse/src/Utils/*.cpp"
+     "Xcurse/src/Widgets/*.cpp"
+     "Xcurse/src/Window/*.cpp"
+)
+
+add_executable(Stonks stonks.cpp config.h common.h ${src_files})
 
 find_package(OpenSSL REQUIRED)
 if (OPENSSL_FOUND)

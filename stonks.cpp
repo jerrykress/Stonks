@@ -8,6 +8,8 @@ namespace ssl = io::ssl;
 using tcp = ip::tcp;
 using error_code = boost::system::error_code;
 using ssl_socket = ssl::stream<tcp::socket>;
+
+using namespace Xcurse;
 using namespace std::literals::chrono_literals;
 
 int main(int argc, char *argv[])
@@ -27,8 +29,21 @@ int main(int argc, char *argv[])
     ssl::context ssl_context(ssl::context::tls);
     ssl_context.set_default_verify_paths();
 
+    // Xcurse
+    Display::init();
+    Display &d = *Display::get_display();
+    d.set_refresh_interval(200);
+
+    bool add_main_win = d.add_obj("root", "trend", new TrendChartWindow("trend", 1));
+
+    TrendChartWindow *trend_win = static_cast<TrendChartWindow *>(d["trend"]);
+
+    trend_win->set_title(L" Main ");
+    d.map_key_action('x', [&]() -> void
+                     { d.power_off(); });
+    d.power_on();
     // make new socket for every new connection
-    for (int i = 0; i < 5; i++)
+    while (d.has_power())
     {
         // ssl socket
         ssl_socket socket(io_context, ssl_context);
@@ -58,7 +73,7 @@ int main(int argc, char *argv[])
 
         API_Request r("GET");
         r.add_param("function", "TIME_SERIES_INTRADAY");
-        r.add_param("symbol", "AAPL");
+        r.add_param("symbol", "TSLA");
         r.add_param("interval", "1min");
         r.add_param("apikey", API_KEY);
         // API request
@@ -81,21 +96,28 @@ int main(int argc, char *argv[])
         std::ostringstream ss;
         ss << std::istream(&response).rdbuf();
         std::string s = ss.str();
-        std::cout << s << std::endl;
+        // std::cout << s << std::endl;
 
         DataSet data_set;
         parse_data(data_set, s);
 
-        // std::cout << data_set << std::endl;
-
+        // trend_win->set_data();
+        std::vector<float> d_open, d_close;
+        regex_save<float>(d_open, s, e_open, [](const std::string &s) -> float
+                          { return std::stof(s); });
+        regex_save<float>(d_close, s, e_close, [](const std::string &s) -> float
+                          { return std::stof(s); });
+        trend_win->set_data(d_open, d_close);
         std::this_thread::sleep_for(20s);
-        data_adaptor(data_set);
+        // data_adaptor(data_set);
     }
 
     // joining context thread
     io_context.stop();
     if (thrContext.joinable())
         thrContext.join();
+
+    d.power_off();
 
     return 0;
 }
