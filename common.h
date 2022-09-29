@@ -295,8 +295,4 @@ private:
 
 void data_adaptor(DataSet &ds)
 {
-    // TODO: get width and height
-    int w, h;
-
-    //
 }

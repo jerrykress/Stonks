@@ -89,6 +89,7 @@ int main(int argc, char *argv[])
         // std::cout << data_set << std::endl;
 
         std::this_thread::sleep_for(20s);
+        data_adaptor(data_set);
     }
 
     // joining context thread
