@@ -2,6 +2,7 @@
 #include "api.h"
 #include "data.h"
 #include "parser.h"
+#include "utils.h"
 
 namespace io = boost::asio;
 namespace ip = io::ip;
@@ -16,6 +17,30 @@ using namespace std::literals::chrono_literals;
 
 int main(int argc, char *argv[])
 {
+    /*
+        Setup Args
+    */
+    if (argc != 4)
+    {
+        std::invalid_argument("Incorrect number of arguments provided. Required: <Symbol> <Func> <Interval>");
+        return 0;
+    }
+
+    const std::string _name = argv[1];
+    const std::string _func = argv[2];
+    const std::string _intv = argv[3];
+
+    /*
+        Build Request
+    */
+    API_Request r("GET");
+    r.add_param("symbol", _name);
+    r.add_param("function", _func);
+    r.add_param("interval", _intv);
+    r.add_param("apikey", API_KEY);
+    // API request
+    std::string request = r.to_string();
+
     /*
         Setup Asio
     */
@@ -77,14 +102,6 @@ int main(int argc, char *argv[])
         if (ec)
             std::cout << "Failed to handshake: " << ec.message() << std::endl;
 
-        API_Request r("GET");
-        r.add_param("function", "TIME_SERIES_INTRADAY");
-        r.add_param("symbol", "TSLA");
-        r.add_param("interval", "1min");
-        r.add_param("apikey", API_KEY);
-        // API request
-        std::string request = r.to_string();
-
         // write request to buffer
         socket.write_some(io::buffer(request.data(), request.size()), ec);
 
@@ -104,12 +121,12 @@ int main(int argc, char *argv[])
         std::string s = ss.str();
 
         DataSet ds;
-
         parse_dataset(ds, s);
 
         trend_win->set_data(ds.low, ds.high, ds.close);
         vol_win->set_data(ds.volume);
-        trend_win->set_title(L"TSLA");
+        trend_win->set_title(to_wstring(_name));
+
         // TODO: implement convert string to wstring
         std::this_thread::sleep_for(20s);
     }

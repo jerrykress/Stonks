@@ -12,7 +12,7 @@
 #include <boost/asio/ssl.hpp>
 #include <thread>
 #include <sstream>
-#include <codecvt>
+#include <stdexcept>
 #include "../Xcurse/src/Window/DataWindow.h"
 
 std::regex e_date("([0-9]{4}-[0-9]{2}-[0-9]{2})(?= [0-9]{2}:[0-9]{2}:[0-9]{2}\":)");
