@@ -2,7 +2,7 @@
 
 Stonks is a terminal based stock price monitor.
 
-![alt text](https://github.com/jerrykress/Stonks/blob/master/img/screenshot.png?raw=true)
+![alt text](https://github.com/jerrykress/Stonks/blob/main/img/screenshot.png?raw=true)
 
 ## Requirements
 
