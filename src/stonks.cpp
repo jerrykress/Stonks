@@ -60,38 +60,38 @@ int main(int argc, char *argv[])
     Display &d = *Display::get_display();
     d.set_refresh_interval(200);
 
-    d.add_obj("root", "trend", new TrendChartWindow("trend", 1));
+    d.add_obj("root", "price", new TrendChartWindow("price", 1));
     d.add_obj("root", "vol", new BarChartWindow("vol", 1));
 
-    TrendChartWindow *trend_win = static_cast<TrendChartWindow *>(d["trend"]);
+    auto price_win = static_cast<TrendChartWindow *>(d["price"]);
+    auto vol_win = static_cast<BarChartWindow *>(d["vol"]);
 
-    BarChartWindow *vol_win = static_cast<BarChartWindow *>(d["vol"]);
-
-    trend_win->set_title(L" Main ");
+    price_win->set_title(L" Price ");
     vol_win->set_title(L" Vol ");
 
     d.map_key_action('x', [&]() -> void
                      { d.power_off(); });
     d.power_on();
-    // make new socket for every new connection
+
+    /*
+        Xcurse runtime
+    */
     while (d.has_power())
     {
-        // ssl socket
         ssl_socket socket(io_context, ssl_context);
-        // HTTPS endpoint
         auto endpoints = resolver.resolve(DOMAIN, "443");
-        /// connect endpoint
         io::connect(socket.next_layer(), endpoints, ec);
         socket.lowest_layer().set_option(tcp::no_delay(true));
 
+#ifdef DEBUG
         if (ec)
             std::cout << "Failed to connect to address: " << ec.message() << std::endl;
-
+#endif
         // setup SSL
         socket.set_verify_mode(ssl::verify_peer);
         socket.set_verify_callback(ssl::host_name_verification(DOMAIN));
 
-        // Set SNI Hostname (many hosts need this to handshake successfully)
+        // Set SNI Hostname (hosts need this to handshake successfully)
         if (!SSL_set_tlsext_host_name(socket.native_handle(), DOMAIN.c_str()))
             throw boost::system::system_error(
                 ::ERR_get_error(), boost::asio::error::get_ssl_category());
@@ -99,22 +99,25 @@ int main(int argc, char *argv[])
         // SSL handshake
         socket.handshake(ssl_socket::client, ec);
 
+#ifdef DEBUG
         if (ec)
             std::cout << "Failed to handshake: " << ec.message() << std::endl;
-
+#endif
         // write request to buffer
         socket.write_some(io::buffer(request.data(), request.size()), ec);
 
+#ifdef DEBUG
         if (ec)
             std::cout << "Error writing request to buffer: " << ec.message() << std::endl;
-
+#endif
         // read response from socket
         io::streambuf response;
         io::read(socket, response, ec);
 
+#ifdef DEBUG
         if (ec)
             std::cout << "Error reading response from socket: " << ec.message() << std::endl;
-
+#endif
         // storing response to string
         std::ostringstream ss;
         ss << std::istream(&response).rdbuf();
@@ -123,12 +126,12 @@ int main(int argc, char *argv[])
         DataSet ds;
         parse_dataset(ds, s);
 
-        trend_win->set_data(ds.low, ds.high, ds.close);
+        price_win->set_data(ds.low, ds.high, ds.close);
+        price_win->set_title(L" Price: " + to_wstring(_name) + L" ");
         vol_win->set_data(ds.volume);
-        trend_win->set_title(to_wstring(_name));
+        vol_win->set_title(L" Volume: " + to_wstring(_name) + L" ");
 
-        // TODO: implement convert string to wstring
-        std::this_thread::sleep_for(20s);
+        std::this_thread::sleep_for(std::chrono::seconds(60 / requests_pm));
     }
 
     // joining context thread

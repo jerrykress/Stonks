@@ -23,6 +23,8 @@ std::regex e_low("([0-9]+\\.[0-9]+)(?=\",[\\w\\-\\s]+\"4)");
 std::regex e_close("([0-9]+\\.[0-9]+)(?=\",[\\w\\-\\s]+\"5)");
 std::regex e_volume("([0-9]+\\.*[0-9]*)(?=\"[\\w\\-\\s]+})");
 
+const int requests_pm = 3;
+
 const std::string DOMAIN = "www.alphavantage.co";
 
 const std::string API_KEY = "02PX8JZ63RHDIAUN";
