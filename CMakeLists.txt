@@ -13,9 +13,11 @@ file(GLOB src_files CONFIGURE_DEPENDS
      "Xcurse/src/Utils/*.cpp"
      "Xcurse/src/Widgets/*.cpp"
      "Xcurse/src/Window/*.cpp"
+     "src/*.cpp"
+     "src/*.h"
 )
 
-add_executable(Stonks stonks.cpp config.h common.h ${src_files})
+add_executable(Stonks ${src_files})
 
 find_package(OpenSSL REQUIRED)
 if (OPENSSL_FOUND)

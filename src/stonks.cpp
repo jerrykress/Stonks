@@ -1,5 +1,7 @@
-#include "config.h"
-#include "common.h"
+#include "constant.h"
+#include "api.h"
+#include "data.h"
+#include "parser.h"
 
 namespace io = boost::asio;
 namespace ip = io::ip;
@@ -122,7 +124,6 @@ int main(int argc, char *argv[])
         trend_win->set_title(L"TSLA");
         // TODO: implement convert string to wstring
         std::this_thread::sleep_for(20s);
-        // data_adaptor(data_set);
     }
 
     // joining context thread
