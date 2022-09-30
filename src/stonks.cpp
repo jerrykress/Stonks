@@ -37,6 +37,7 @@ int main(int argc, char *argv[])
     r.add_param("symbol", _name);
     r.add_param("function", _func);
     r.add_param("interval", _intv);
+    // r.add_param("adjusted", "false");
     r.add_param("apikey", API_KEY);
     // API request
     std::string request = r.to_string();
