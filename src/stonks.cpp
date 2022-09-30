@@ -16,22 +16,21 @@ using namespace std::literals::chrono_literals;
 
 int main(int argc, char *argv[])
 {
-    // error code
-    error_code ec;
-    // asio context
-    io::io_context io_context;
-    // idle work
-    io::io_context::work idleWork(io_context);
-    // context thread
+    /*
+        Setup Asio
+    */
+    error_code ec;                             // error code
+    io::io_context io_context;                 // asio context
+    io::io_context::work idleWork(io_context); // idle work
     std::thread thrContext = std::thread([&]()
-                                         { io_context.run(); });
-    // resolver
-    tcp::resolver resolver(io_context);
-    // ssl context
-    ssl::context ssl_context(ssl::context::tls);
+                                         { io_context.run(); }); // context thread
+    tcp::resolver resolver(io_context);                          // resolver
+    ssl::context ssl_context(ssl::context::tls);                 // ssl context
     ssl_context.set_default_verify_paths();
 
-    // Xcurse
+    /*
+        Setup Xcurse
+    */
     Display::init();
     Display &d = *Display::get_display();
     d.set_refresh_interval(200);
@@ -103,24 +102,13 @@ int main(int argc, char *argv[])
         std::ostringstream ss;
         ss << std::istream(&response).rdbuf();
         std::string s = ss.str();
-        // std::cout << s << std::endl;
 
-        DataSet data_set;
-        // parse_data(data_set, s);
+        DataSet ds;
 
-        // trend_win->set_data();
-        std::vector<float> d_low, d_high, d_close, d_vol;
-        regex_save<float>(d_low, s, e_low, [](const std::string &s) -> float
-                          { return std::stof(s); });
-        regex_save<float>(d_high, s, e_high, [](const std::string &s) -> float
-                          { return std::stof(s); });
-        regex_save<float>(d_close, s, e_close, [](const std::string &s) -> float
-                          { return std::stof(s); });
-        regex_save<float>(d_vol, s, e_volume, [](const std::string &s) -> float
-                          { return std::stof(s); });
+        parse_dataset(ds, s);
 
-        trend_win->set_data(d_low, d_high, d_close);
-        vol_win->set_data(d_vol);
+        trend_win->set_data(ds.low, ds.high, ds.close);
+        vol_win->set_data(ds.volume);
         trend_win->set_title(L"TSLA");
         // TODO: implement convert string to wstring
         std::this_thread::sleep_for(20s);

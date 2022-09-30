@@ -4,6 +4,15 @@
 #include "constant.h"
 #include "data.h"
 
+/**
+ * @brief Save data into a vector with regex expression
+ *
+ * @tparam T Vector type
+ * @param v Dest vector
+ * @param s Source string
+ * @param e Regex expression
+ * @param f Adapter, convert string to dest vector type
+ */
 template <typename T>
 void regex_save(std::vector<T> &v, const std::string &s, std::regex &e, const std::function<T(const std::string &)> &f)
 {
@@ -17,10 +26,14 @@ void regex_save(std::vector<T> &v, const std::string &s, std::regex &e, const st
     }
 }
 
-void parse_data(DataSet &d, const std::string &s)
+/**
+ * @brief Parse all data separatly into a DataSet object
+ *
+ * @param d Dest dataset
+ * @param s Origin string
+ */
+void parse_dataset(DataSet &d, const std::string &s)
 {
-    // std::cout << "Parse data size: " << s.size() << std::endl;
-
     std::vector<Date> dates;
     std::vector<Time> times;
     std::vector<float> open;
@@ -28,8 +41,6 @@ void parse_data(DataSet &d, const std::string &s)
     std::vector<float> low;
     std::vector<float> close;
     std::vector<float> volume;
-
-    float max_price, min_price;
 
     regex_save<Date>(dates, s, e_date, [](const std::string &s) -> Date
                      { return Date(std::stoi(s.substr(0, 4)),
@@ -50,20 +61,7 @@ void parse_data(DataSet &d, const std::string &s)
     regex_save<float>(volume, s, e_volume, [](const std::string &s) -> float
                       { return std::stof(s); });
 
-    max_price = *std::max_element(high.begin(), high.end());
-    min_price = *std::min_element(low.begin(), low.end());
-
-    if (dates.size() == times.size() && times.size() == open.size() && open.size() == high.size() && high.size() == low.size() && low.size() == close.size() && close.size() == volume.size())
-    {
-        d.size = dates.size();
-
-        for (int i = 0; i < d.size; i++)
-        {
-            d.data.emplace_back(DataPoint(
-                dates[i], times[i], open[i], high[i], low[i], close[i], volume[i]));
-        }
-    }
-    else
+    if (dates.size() != times.size() || times.size() != open.size() || open.size() != high.size() || high.size() != low.size() || low.size() != close.size() || close.size() != volume.size())
     {
         std::cout << "DataPoint parameter size mismatch!\n"
                   << "["
@@ -76,7 +74,21 @@ void parse_data(DataSet &d, const std::string &s)
                   << "volume:" << volume.size()
                   << "]\n";
     }
+}
 
-    d.max_price = max_price;
-    d.min_price = min_price;
+/**
+ * @brief Build a DataSet into a vector of DataPoints
+ *
+ * @param ds Origin DataSet
+ * @param v Dest vector
+ */
+void build_dataset(DataSet &ds, std::vector<DataPoint> &v)
+{
+    const int _size = ds.dates.size();
+
+    for (int i = 0; i < _size; i++)
+    {
+        v.emplace_back(DataPoint(
+            ds.dates[i], ds.times[i], ds.open[i], ds.high[i], ds.low[i], ds.close[i], ds.volume[i]));
+    }
 }
