@@ -12,6 +12,7 @@
 #include <boost/asio/ssl.hpp>
 #include <thread>
 #include <sstream>
+#include <codecvt>
 
 #include "Xcurse/src/Window/DataWindow.h"
 

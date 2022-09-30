@@ -268,11 +268,6 @@ public:
         return request;
     }
 
-private:
-    std::string m_type;
+    std::string m_type; // GET
     std::unordered_map<std::string, std::string> m_params;
 };
-
-void data_adaptor(DataSet &ds)
-{
-}

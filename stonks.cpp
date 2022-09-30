@@ -34,11 +34,16 @@ int main(int argc, char *argv[])
     Display &d = *Display::get_display();
     d.set_refresh_interval(200);
 
-    bool add_main_win = d.add_obj("root", "trend", new TrendChartWindow("trend", 1));
+    d.add_obj("root", "trend", new TrendChartWindow("trend", 1));
+    d.add_obj("root", "vol", new BarChartWindow("vol", 1));
 
     TrendChartWindow *trend_win = static_cast<TrendChartWindow *>(d["trend"]);
 
+    BarChartWindow *vol_win = static_cast<BarChartWindow *>(d["vol"]);
+
     trend_win->set_title(L" Main ");
+    vol_win->set_title(L" Vol ");
+
     d.map_key_action('x', [&]() -> void
                      { d.power_off(); });
     d.power_on();
@@ -99,15 +104,23 @@ int main(int argc, char *argv[])
         // std::cout << s << std::endl;
 
         DataSet data_set;
-        parse_data(data_set, s);
+        // parse_data(data_set, s);
 
         // trend_win->set_data();
-        std::vector<float> d_open, d_close;
-        regex_save<float>(d_open, s, e_open, [](const std::string &s) -> float
+        std::vector<float> d_low, d_high, d_close, d_vol;
+        regex_save<float>(d_low, s, e_low, [](const std::string &s) -> float
+                          { return std::stof(s); });
+        regex_save<float>(d_high, s, e_high, [](const std::string &s) -> float
                           { return std::stof(s); });
         regex_save<float>(d_close, s, e_close, [](const std::string &s) -> float
                           { return std::stof(s); });
-        trend_win->set_data(d_open, d_close);
+        regex_save<float>(d_vol, s, e_volume, [](const std::string &s) -> float
+                          { return std::stof(s); });
+
+        trend_win->set_data(d_low, d_high, d_close);
+        vol_win->set_data(d_vol);
+        trend_win->set_title(L"TSLA");
+        // TODO: implement convert string to wstring
         std::this_thread::sleep_for(20s);
         // data_adaptor(data_set);
     }
