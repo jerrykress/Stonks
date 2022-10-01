@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
     */
     if (argc != 4)
     {
-        std::invalid_argument("Incorrect number of arguments provided. Required: <Symbol> <Func> <Interval>");
+        std::cout << "Incorrect number of arguments provided. Required: <Symbol> <Func> <Interval>" << std::endl;
         return 0;
     }
 
@@ -72,6 +72,11 @@ int main(int argc, char *argv[])
 
     d.map_key_action('x', [&]() -> void
                      { d.power_off(); });
+    d.map_key_action('p', [&]() -> void
+                     { price_win->set_visible(); });
+    d.map_key_action('v', [&]() -> void
+                     { vol_win->set_visible(); });
+
     d.power_on();
 
     /*
