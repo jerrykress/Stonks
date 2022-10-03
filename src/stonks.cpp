@@ -2,7 +2,6 @@
 #include "api.h"
 #include "data.h"
 #include "parser.h"
-#include "utils.h"
 
 namespace io = boost::asio;
 namespace ip = io::ip;
@@ -31,7 +30,7 @@ int main(int argc, char *argv[])
     const std::string _intv = argv[3];
 
     /*
-        Build Request
+        Build API Request
     */
     API_Request r("GET");
     r.add_param("symbol", _name);
@@ -55,21 +54,29 @@ int main(int argc, char *argv[])
     ssl_context.set_default_verify_paths();
 
     /*
-        Setup Xcurse
+        Setup Xcurse windows
     */
     Display::init();
     Display &d = *Display::get_display();
     d.set_refresh_interval(200);
 
+    d.add_obj("root", "title", new TextField("title", "Stock Name", ALIGN_CENTER));
     d.add_obj("root", "price", new TrendChartWindow("price", 1));
     d.add_obj("root", "vol", new BarChartWindow("vol", 1));
 
     auto price_win = static_cast<TrendChartWindow *>(d["price"]);
     auto vol_win = static_cast<BarChartWindow *>(d["vol"]);
+    auto title_widget = static_cast<TextField *>(d["title"]);
 
     price_win->set_title(L" Price ");
-    vol_win->set_title(L" Vol ");
+    vol_win->set_title(L" Volume ");
+    title_widget->background = BACKGROUND_COLOR_BLUE;
+    title_widget->foreground = TEXT_COLOR_BRIGHT_WHITE;
+    title_widget->background = true;
 
+    /*
+        Key mapping
+    */
     d.map_key_action('x', [&]() -> void
                      { d.power_off(); });
     d.map_key_action('p', [&]() -> void
@@ -132,10 +139,11 @@ int main(int argc, char *argv[])
         DataSet ds;
         parse_dataset(ds, s);
 
+        title_widget->set_data(to_wstring(_name + " (" + ds.dates.back().to_string() + " " + ds.times.back().to_string() + ") "));
         price_win->set_data(ds.low, ds.high, ds.close);
-        price_win->set_title(L" Price: " + to_wstring(_name) + L" ");
+        price_win->set_title(to_wstring(" Price :" + std::to_string(ds.close.back()) + " "));
         vol_win->set_data(ds.volume);
-        vol_win->set_title(L" Volume: " + to_wstring(_name) + L" ");
+        vol_win->set_title(to_wstring(" Volume :" + std::to_string(ds.volume.back()) + " "));
 
         std::this_thread::sleep_for(std::chrono::seconds(60 / requests_pm));
     }

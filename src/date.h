@@ -29,6 +29,11 @@ public:
         return year == that.year && month == that.month && day == that.day;
     }
 
+    std::string to_string()
+    {
+        return std::to_string(year) + "-" + std::to_string(month) + "-" + std::to_string(day);
+    }
+
 private:
     int abs_val() const
     {

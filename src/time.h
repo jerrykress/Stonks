@@ -25,6 +25,11 @@ public:
     {
         return hour == that.hour && min == that.hour && sec == that.sec;
     }
+
+    std::string to_string()
+    {
+        return std::to_string(hour) + ":" + std::to_string(min) + ":" + std::to_string(sec);
+    }
 };
 
 std::ostream &operator<<(std::ostream &os, const Time &that)

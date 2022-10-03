@@ -24,6 +24,9 @@ void regex_save(std::vector<T> &v, const std::string &s, std::regex &e, const st
         v.emplace_back(f(sm[0]));
         searchStart = sm.suffix().first;
     }
+
+    // reverse the array for chrono order
+    v = {v.rbegin(), v.rend()};
 }
 
 /**

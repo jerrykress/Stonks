@@ -14,6 +14,7 @@
 #include <sstream>
 #include <stdexcept>
 #include "../Xcurse/src/Window/DataWindow.h"
+#include "../Xcurse/src/Widgets/TextField.h"
 
 std::regex e_date("([0-9]{4}-[0-9]{2}-[0-9]{2})(?= [0-9]{2}:[0-9]{2}:[0-9]{2}\":)");
 std::regex e_time("([0-9]{2}:[0-9]{2}:[0-9]{2})(?=\":)");
