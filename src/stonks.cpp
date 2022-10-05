@@ -63,16 +63,21 @@ int main(int argc, char *argv[])
     d.add_obj("root", "title", new TextField("title", "Stock Name", ALIGN_CENTER));
     d.add_obj("root", "price", new TrendChartWindow("price", 1));
     d.add_obj("root", "vol", new BarChartWindow("vol", 1));
+    d.add_obj("root", "helpbar", new TextField("helpbar", "[P] Price   [B] Volume   [X] Quit", ALIGN_CENTER));
 
     auto price_win = static_cast<TrendChartWindow *>(d["price"]);
     auto vol_win = static_cast<BarChartWindow *>(d["vol"]);
     auto title_widget = static_cast<TextField *>(d["title"]);
+    auto help_widget = static_cast<TextField *>(d["helpbar"]);
 
     price_win->set_title(L" Price ");
     vol_win->set_title(L" Volume ");
+
     title_widget->background = BACKGROUND_COLOR_BLUE;
     title_widget->foreground = TEXT_COLOR_BRIGHT_WHITE;
-    title_widget->background = true;
+    title_widget->bold = true;
+
+    help_widget->background = BACKGROUND_COLOR_BRIGHT_CYAN;
 
     /*
         Key mapping
