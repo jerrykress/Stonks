@@ -1,23 +1,49 @@
 # Stonks
 
-Stonks is a terminal based stock price monitor.
+Stonks is a terminal based stock price monitor. It pulls real time data using AlphaVantage APIs and display history prices and trading volume.
 
-![alt text](https://github.com/jerrykress/Stonks/blob/main/img/screenshot.png?raw=true)
+![alt text](https://github.com/jerrykress/Stonks/blob/main/img/Screenshot.png?raw=true)
 
-## Requirements
+## Requirement
 
-- **OpenSSL**
-  > **Download:** https://www.openssl.org/source/ > **Arch:** sudo pacman -S openssl
-- **Xcurse**
-  > **Download:** https://github.com/jerrykress/Xcurse > **Clone:** git clone git@github.com:jerrykress/Xcurse.git
+**OpenSSL**
 
-## Usage
+```
+# Download from
+https://www.openssl.org/source/
+# install via apt
+sudo apt-get install openssl
+# install via pacman
+sudo pacman -S openssl
+```
 
-**Syntax:** \<name> \<function> \<interval>
-|Function |Interval  
-|----------------|-------------------------------|
-|TIME_SERIES_INTRADAY|1min, 5min |
+**Boost Library**
 
-Example:
+```
+# install Boost
+https://www.boost.org/
+# install via apt
+sudo apt-get install boost
+# install via pacman
+sudo pacman -S boost
+```
 
-> ./Stonks TSLA TIME_SERIES_INTRADAY 1min
+**Xcurse**
+
+```
+# Clone from my other repo
+https://github.com/jerrykress/Xcurse
+```
+
+## How to use
+
+Refer to AlphaVantage [API documentation](https://www.alphavantage.co/documentation/) page for more information.
+
+**Syntax:**
+
+```
+# general syntax
+./Stonks <name> <function> <interval>
+# example
+./Stonks TSLA TIME_SERIES_INTRADAY 1min
+```

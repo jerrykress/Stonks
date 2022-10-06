@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
     /*
         Setup Args
     */
-    if (argc != 4)
+    if (argc < 2)
     {
         std::cout << "Incorrect number of arguments provided. Required: <Symbol> <Func> <Interval>" << std::endl;
         return 0;
@@ -36,7 +36,6 @@ int main(int argc, char *argv[])
     r.add_param("symbol", _name);
     r.add_param("function", _func);
     r.add_param("interval", _intv);
-    // r.add_param("adjusted", "false");
     r.add_param("apikey", API_KEY);
     // API request
     std::string request = r.to_string();
@@ -74,10 +73,11 @@ int main(int argc, char *argv[])
     vol_win->set_title(L" Volume ");
 
     title_widget->background = BACKGROUND_COLOR_BLUE;
-    title_widget->foreground = TEXT_COLOR_BRIGHT_WHITE;
+    title_widget->foreground = TEXT_COLOR_BRIGHT_BLACK;
     title_widget->bold = true;
 
     help_widget->background = BACKGROUND_COLOR_BRIGHT_CYAN;
+    help_widget->foreground = TEXT_COLOR_BRIGHT_BLACK;
 
     /*
         Key mapping
