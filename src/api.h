@@ -2,11 +2,25 @@
 #include <unordered_map>
 #include "constant.h"
 
+/**
+ * @brief Class for constructing API request strings
+ *
+ */
 class API_Request
 {
 public:
+    /**
+     * @brief Construct a new api request object
+     *
+     */
     API_Request();
 
+    /**
+     * @brief Construct a new api request object
+     *
+     * @param argc argc from main
+     * @param argv argv from main
+     */
     explicit API_Request(int argc, char *argv[])
     {
         if (argc < 2)
@@ -24,21 +38,42 @@ public:
         }
     }
 
+    /**
+     * @brief Get the symbol of the current stock
+     *
+     * @return std::string
+     */
     std::string get_name()
     {
         return m_params["symbol"];
     }
 
+    /**
+     * @brief Get the function currently used in the api
+     *
+     * @return std::string
+     */
     std::string get_func()
     {
         return m_func_str[m_func_select];
     }
 
+    /**
+     * @brief Add a parameter to the API request
+     *
+     * @param param
+     * @param value
+     */
     void add_param(const std::string &param, const std::string &value)
     {
         m_params[param] = value;
     }
 
+    /**
+     * @brief Output this API to request to string format
+     *
+     * @return std::string
+     */
     std::string to_string()
     {
         std::string request = "GET /query?";
@@ -57,12 +92,20 @@ public:
         return request;
     }
 
+    /**
+     * @brief Switch to the previous function
+     *
+     */
     void prev_func()
     {
         m_func_select = (m_func_select + m_total_func - 1) % m_total_func;
         update_func();
     }
 
+    /**
+     * @brief Switch to the next function
+     *
+     */
     void next_func()
     {
         m_func_select = (m_func_select + 1) % m_total_func;
@@ -70,6 +113,10 @@ public:
     }
 
 private:
+    /**
+     * @brief Update the API content after a function selection change
+     *
+     */
     void update_func()
     {
         m_params["function"] = m_funcs[m_func_select];

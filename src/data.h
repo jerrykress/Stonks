@@ -59,6 +59,13 @@ public:
      */
     DataPoint(Date d, Time t, float open, float high, float low, float close, float volume) : open(open), high(high), low(low), close(close), volume(volume), date(d), time(t) {}
 
+    /**
+     * @brief Operator overload
+     *
+     * @param that
+     * @return true
+     * @return false
+     */
     bool operator<(const DataPoint &that)
     {
         return (date < that.date)   ? true
@@ -66,6 +73,13 @@ public:
                                     : (time < that.time);
     }
 
+    /**
+     * @brief Operator overload
+     *
+     * @param that
+     * @return true
+     * @return false
+     */
     bool operator>(const DataPoint &that)
     {
         return (date > that.date)   ? true
@@ -73,6 +87,13 @@ public:
                                     : (time > that.time);
     }
 
+    /**
+     * @brief Operator overload
+     *
+     * @param that
+     * @return true
+     * @return false
+     */
     bool operator==(const DataPoint &that)
     {
         return date == that.date && time == that.time;

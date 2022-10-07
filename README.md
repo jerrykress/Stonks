@@ -39,11 +39,47 @@ https://github.com/jerrykress/Xcurse
 
 Refer to AlphaVantage [API documentation](https://www.alphavantage.co/documentation/) page for more information.
 
+**Configuration**
+
+```
+<constant.h>
+
+# max requests per minate, limit to not overload free api
+const int requests_pm = 4;
+
+# your api key here
+const std::string API_KEY = "xxxxxx";
+```
+
 **Syntax:**
 
 ```
 # general syntax
-./Stonks <name> <function> [Options...]
+./Stonks <stoke name>
 # example
-./Stonks TSLA TIME_SERIES_INTRADAY 1min
+./Stonks TSLA
 ```
+
+**Control**
+
+```
+# show/hide price
+key 'p'
+# show/hide volume
+key 'v'
+# change to wider view, for example intraday to daily
+key '-'
+# change to narrower view, for example daily to intraday
+key '+'
+# quit program
+key 'x'
+```
+
+## Known Issue
+
+- Restricted by free API key. Causing program not being able to process more than 5 requests per minute. This includes changing views which results in making new API calls.
+- Bad API calls such as bad stock symbols will result in program crash. This will be fixed in an update in Xcurse.
+
+## Coming Soon
+
+- Ability to view more than one stock at once. (This will require a paid API key as it makes more requests).

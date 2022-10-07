@@ -24,8 +24,10 @@ std::regex e_low("([0-9]+\\.[0-9]+)(?=\",[\\w\\-\\s]+\"4)");
 std::regex e_close("([0-9]+\\.[0-9]+)(?=\",[\\w\\-\\s]+\"5)");
 std::regex e_volume("([0-9]+\\.*[0-9]*)(?=\"[\\w\\-\\s]+})");
 
-const int requests_pm = 4;
-
 const std::string DOMAIN = "www.alphavantage.co";
 
+// artificial limit to requests made per min, restricted by free api
+const int requests_pm = 4;
+
+// your api key here
 const std::string API_KEY = "02PX8JZ63RHDIAUN";
