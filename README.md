@@ -32,7 +32,7 @@ sudo pacman -S boost
 
 ```
 # Clone from my other repo
-https://github.com/jerrykress/Xcurse
+git clone https://github.com/jerrykress/Xcurse
 ```
 
 ## How to use
@@ -79,6 +79,7 @@ key 'x'
 
 - Restricted by free API key. Causing program not being able to process more than 5 requests per minute. This includes changing views which results in making new API calls.
 - Bad API calls such as bad stock symbols will result in program crash. This will be fixed in an update in Xcurse.
+- Only tested on Linux. Not tested on Windows or MacOS.
 
 ## Coming Soon
 

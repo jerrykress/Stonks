@@ -30,4 +30,4 @@ const std::string DOMAIN = "www.alphavantage.co";
 const int requests_pm = 4;
 
 // your api key here
-const std::string API_KEY = "02PX8JZ63RHDIAUN";
+const std::string API_KEY = "";
