@@ -16,7 +16,7 @@
 #include "../Xcurse/src/Window/DataWindow.h"
 #include "../Xcurse/src/Widgets/TextField.h"
 
-std::regex e_date("([0-9]{4}-[0-9]{2}-[0-9]{2})(?= [0-9]{2}:[0-9]{2}:[0-9]{2}\":)");
+std::regex e_date("([0-9]{4}-[0-9]{2}-[0-9]{2})(?=.*\":)");
 std::regex e_time("([0-9]{2}:[0-9]{2}:[0-9]{2})(?=\":)");
 std::regex e_open("([0-9]+\\.[0-9]+)(?=\",[\\w\\-\\s]+\"2)");
 std::regex e_high("([0-9]+\\.[0-9]+)(?=\",[\\w\\-\\s]+\"3)");
@@ -24,7 +24,7 @@ std::regex e_low("([0-9]+\\.[0-9]+)(?=\",[\\w\\-\\s]+\"4)");
 std::regex e_close("([0-9]+\\.[0-9]+)(?=\",[\\w\\-\\s]+\"5)");
 std::regex e_volume("([0-9]+\\.*[0-9]*)(?=\"[\\w\\-\\s]+})");
 
-const int requests_pm = 3;
+const int requests_pm = 4;
 
 const std::string DOMAIN = "www.alphavantage.co";
 

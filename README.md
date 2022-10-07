@@ -17,7 +17,7 @@ sudo apt-get install openssl
 sudo pacman -S openssl
 ```
 
-**Boost Library**
+**Boost Asio**
 
 ```
 # install Boost
@@ -28,7 +28,7 @@ sudo apt-get install boost
 sudo pacman -S boost
 ```
 
-**Xcurse**
+**Xcurse Library**
 
 ```
 # Clone from my other repo
@@ -43,7 +43,7 @@ Refer to AlphaVantage [API documentation](https://www.alphavantage.co/documentat
 
 ```
 # general syntax
-./Stonks <name> <function> <interval>
+./Stonks <name> <function> [Options...]
 # example
 ./Stonks TSLA TIME_SERIES_INTRADAY 1min
 ```

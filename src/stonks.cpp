@@ -17,28 +17,9 @@ using namespace std::literals::chrono_literals;
 int main(int argc, char *argv[])
 {
     /*
-        Setup Args
-    */
-    if (argc < 2)
-    {
-        std::cout << "Incorrect number of arguments provided. Required: <Symbol> <Func> <Interval>" << std::endl;
-        return 0;
-    }
-
-    const std::string _name = argv[1];
-    const std::string _func = argv[2];
-    const std::string _intv = argv[3];
-
-    /*
         Build API Request
     */
-    API_Request r("GET");
-    r.add_param("symbol", _name);
-    r.add_param("function", _func);
-    r.add_param("interval", _intv);
-    r.add_param("apikey", API_KEY);
-    // API request
-    std::string request = r.to_string();
+    API_Request r(argc, argv);
 
     /*
         Setup Asio
@@ -62,7 +43,7 @@ int main(int argc, char *argv[])
     d.add_obj("root", "title", new TextField("title", "Stock Name", ALIGN_CENTER));
     d.add_obj("root", "price", new TrendChartWindow("price", 1));
     d.add_obj("root", "vol", new BarChartWindow("vol", 1));
-    d.add_obj("root", "helpbar", new TextField("helpbar", "[P] Price   [B] Volume   [X] Quit", ALIGN_CENTER));
+    d.add_obj("root", "helpbar", new TextField("helpbar", "[-]Zoom out  [+]Zoom in  [P]Price   [V]Volume   [X]Quit", ALIGN_CENTER));
 
     auto price_win = static_cast<TrendChartWindow *>(d["price"]);
     auto vol_win = static_cast<BarChartWindow *>(d["vol"]);
@@ -88,6 +69,10 @@ int main(int argc, char *argv[])
                      { price_win->set_visible(); });
     d.map_key_action('v', [&]() -> void
                      { vol_win->set_visible(); });
+    d.map_key_action('-', [&]() -> void
+                     { r.prev_func(); });
+    d.map_key_action('=', [&]() -> void
+                     { r.next_func(); });
 
     d.power_on();
 
@@ -96,6 +81,9 @@ int main(int argc, char *argv[])
     */
     while (d.has_power())
     {
+        // get new request string everytime to monitor changes
+        std::string request = r.to_string();
+
         ssl_socket socket(io_context, ssl_context);
         auto endpoints = resolver.resolve(DOMAIN, "443");
         io::connect(socket.next_layer(), endpoints, ec);
@@ -144,7 +132,7 @@ int main(int argc, char *argv[])
         DataSet ds;
         parse_dataset(ds, s);
 
-        title_widget->set_data(to_wstring(_name + " (" + ds.dates.back().to_string() + " " + ds.times.back().to_string() + ") "));
+        title_widget->set_data(to_wstring(r.get_name() + " (" + r.get_func() + ", " + ds.dates.back().to_string() + (r.get_func() == "Intra-day" ? (" " + ds.times.back().to_string()) : "") + ") "));
         price_win->set_data(ds.low, ds.high, ds.close);
         price_win->set_title(to_wstring(" Price :" + std::to_string(ds.close.back()) + " "));
         vol_win->set_data(ds.volume);
