@@ -14,6 +14,8 @@ using ssl_socket = ssl::stream<tcp::socket>;
 using namespace Xcurse;
 using namespace std::literals::chrono_literals;
 
+static bool prog_exit = false; // exit signal
+
 int main(int argc, char *argv[])
 {
     /*
@@ -64,7 +66,7 @@ int main(int argc, char *argv[])
         Key mapping
     */
     d.map_key_action('x', [&]() -> void
-                     { d.power_off(); });
+                     { prog_exit = true; });
     d.map_key_action('p', [&]() -> void
                      { price_win->set_visible(); });
     d.map_key_action('v', [&]() -> void
@@ -79,7 +81,7 @@ int main(int argc, char *argv[])
     /*
         Xcurse runtime
     */
-    while (d.has_power())
+    while (!prog_exit)
     {
         // get new request string everytime to monitor changes
         std::string request = r.to_string();
