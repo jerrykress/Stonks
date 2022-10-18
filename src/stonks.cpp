@@ -40,10 +40,10 @@ int main(int argc, char *argv[])
     Display &d = *Display::get_display();
     d.set_refresh_interval(200);
 
-    d.add_obj("root", "title", new TextField("title", "Stock Name", ALIGN_CENTER));
-    d.add_obj("root", "price", new TrendChartWindow("price", 1));
-    d.add_obj("root", "vol", new BarChartWindow("vol", 1));
-    d.add_obj("root", "helpbar", new TextField("helpbar", "[-]Zoom out  [+]Zoom in  [P]Price   [V]Volume   [X]Quit", ALIGN_CENTER));
+    d.add_obj("root", "title", new TextField("Stock Name", ALIGN_CENTER));
+    d.add_obj("root", "price", new TrendChartWindow(1));
+    d.add_obj("root", "vol", new BarChartWindow(1));
+    d.add_obj("root", "helpbar", new TextField("[-]Zoom out  [+]Zoom in  [P]Price   [V]Volume   [X]Quit", ALIGN_CENTER));
 
     auto price_win = static_cast<TrendChartWindow *>(d["price"]);
     auto vol_win = static_cast<BarChartWindow *>(d["vol"]);
